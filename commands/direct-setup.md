@@ -32,8 +32,8 @@ DIRECTタスクの設定作業を実行します。設計文書に基づいて�
 3. **設計文書の確認**
    - 読み込んだ技術スタック定義に基づいて関連ファイルを特定
    - Task tool (subagent_type: Explore, thoroughness: medium) を使用して関連設計文書や設定パターンを探索
-   - `docs/design/{要件名}/architecture.md` をReadツールで読み込み
-   - `docs/design/{要件名}/database-schema.sql` をReadツールで読み込み
+   - `docs/tumigidoc/{要件名}/design/architecture.md` をReadツールで読み込み
+   - `docs/tumigidoc/{要件名}/design/database-schema.sql` をReadツールで読み込み
    - その他関連する設計文書をReadツールで読み込み
 
 3. **設定作業の実行**

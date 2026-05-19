@@ -327,7 +327,7 @@ expect(result.errors).toContain('error message'); // 【確認内容】: [特定
 
 ## 関連ファイル
 
-- 元タスクファイル: `docs/tasks/{taskファイルのパス}.md`
+- 元タスクファイル: `docs/tumigidoc/{要件名}/tasks/{taskファイルのパス}.md`
 - 要件定義: `docs/implements/{要件名}/{{task_id}}/{feature_name}-requirements.md`
 - テストケース定義: `docs/implements/{要件名}/{{task_id}}/{feature_name}-testcases.md`
 - 実装ファイル: `[実装ファイルのパス]`

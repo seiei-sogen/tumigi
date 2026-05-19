@@ -12,15 +12,15 @@ argument-hint: "[要件名] [--task]"
 
 ## 前提条件
 
-- `docs/design/{要件名}/` に設計文書が存在する
+- `docs/tumigidoc/{要件名}/design/` に設計文書が存在する
 - 設計がユーザによって承認されている（または承認が省略されている）
-- `docs/tasks/` ディレクトリが存在する（なければ作成）
+- `docs/tumigidoc/` ディレクトリが存在する（なければ作成）
 - 思考は英語で実施。ファイルは日本語で記述
 - task_id は `TASK-{4桁の数字}` (例 TASK-0001)にする
 
 # context
 
-出力ディレクトリ="docs/tasks"
+出力ディレクトリ="docs/tumigidoc"
 要件名={{requirement_name}}
 作業規模={{work_scope}}
 信頼性評価=[]
@@ -70,7 +70,7 @@ claude_code_task登録={{register_to_claude_code_task}}
 ## step3: 開発コンテキストの準備
 
 - **タスクノートの読み込み**
-  - `docs/spec/{要件名}/note.md` が存在する場合は読み込み
+  - `docs/tumigidoc/{要件名}/spec/note.md` が存在する場合は読み込み
   - 存在しない場合:
     - Task ツールを使用して subagent_type: "general-purpose" で `/tumigi:kairo-tasknote {要件名}` コマンドを実行してノートを生成
     - 生成されたノートファイルを読み込み
@@ -88,17 +88,17 @@ claude_code_task登録={{register_to_claude_code_task}}
   - どちらも存在しない場合は `.claude/commands/tech-stack.md` のデフォルト定義を使用
 
 - **要件定義・設計文書の読み込み**
-  - `docs/spec/{要件名}-requirements.md` または `docs/spec/{要件名}/requirements.md` を読み込み
-  - `docs/design/{要件名}/architecture.md` を読み込み
-  - `docs/design/{要件名}/database-schema.sql` を読み込み
-  - `docs/design/{要件名}/api-endpoints.md` を読み込み
-  - `docs/design/{要件名}/interfaces.ts` を読み込み
-  - `docs/design/{要件名}/dataflow.md` を読み込み
+  - `docs/tumigidoc/{要件名}/spec/requirements.md` を読み込み
+  - `docs/tumigidoc/{要件名}/design/architecture.md` を読み込み
+  - `docs/tumigidoc/{要件名}/design/database-schema.sql` を読み込み
+  - `docs/tumigidoc/{要件名}/design/api-endpoints.md` を読み込み
+  - `docs/tumigidoc/{要件名}/design/interfaces.ts` を読み込み
+  - `docs/tumigidoc/{要件名}/design/dataflow.md` を読み込み
   - 読み込んだ技術スタック定義に基づいて実装技術を特定
 
 - **既存タスクファイルの確認**
   - Task tool (subagent_type: Explore, thoroughness: quick) を使用して既存タスクIDを探索
-  - 既存の`docs/tasks/{要件名}-TASK-*.md`ファイルを確認
+  - 既存の`docs/tumigidoc/{要件名}/tasks/TASK-*.md`ファイルを確認
   - 使用済みタスク番号（TASK-0000形式）を抽出
   - 新規タスクで重複しない番号を割り当て
 
@@ -269,7 +269,7 @@ AskUserQuestion ツールを使って、選択された項目に応じた質問�
      - 該当フェーズのタスクリスト（タスク番号、タスク名、タイプ、依存関係等）
      - 各タスクの詳細情報（実装詳細、テスト要件、UI/UX要件等）
      - 使用するテンプレート（<full_task_template>または<minimal_task_template>）
-     - ファイル出力先: `docs/tasks/{要件名}/TASK-XXXX.md`
+     - ファイル出力先: `docs/tumigidoc/{要件名}/tasks/TASK-XXXX.md`
      - 信頼性レベルの付与ルール
      - 注意事項: "このフェーズのすべてのタスクファイルを作成すること。途中で止めないこと。"
   5. すべてのTaskツールの実行完了を待つ
@@ -302,7 +302,7 @@ AskUserQuestion ツールを使って、選択された項目に応じた質問�
 - 全タスクファイル作成後に overview を作成
 - 作成したタスクファイルの情報を集約
 - <overview_template> を使用してファイルを作成
-- `docs/tasks/{要件名}/overview.md` に出力
+- `docs/tumigidoc/{要件名}/tasks/overview.md` に出力
 
 ### 6.2 品質評価
 
@@ -349,7 +349,7 @@ AskUserQuestion ツールを使って、選択された項目に応じた質問�
 
 #### 6.5.1 タスク情報の収集
 
-- 作成した全タスクファイル（`docs/tasks/{要件名}/TASK-*.md`）を読み込む
+- 作成した全タスクファイル（`docs/tumigidoc/{要件名}/tasks/TASK-*.md`）を読み込む
 - 各タスクファイルから以下の情報を抽出：
   - タスクID（例: TASK-0001）
   - タスク名
@@ -431,9 +431,9 @@ AskUserQuestion ツールを使って、選択された項目に応じた質問�
 ## ファイル名のルール
 
 ### 出力ファイルのパス形式
-- `docs/tasks/{要件名}/overview.md`
-- `docs/tasks/{要件名}/TASK-0001.md` (1ファイル1タスク)
-- `docs/tasks/{要件名}/TASK-0002.md`
+- `docs/tumigidoc/{要件名}/tasks/overview.md`
+- `docs/tumigidoc/{要件名}/tasks/TASK-0001.md` (1ファイル1タスク)
+- `docs/tumigidoc/{要件名}/tasks/TASK-0002.md`
 - （全タスク分）
 
 ### ファイル名の命名規則
@@ -548,7 +548,7 @@ description: |
   タイプ: {TDD/DIRECT}
   推定工数: {工数}時間
   フェーズ: Phase 1 - {フェーズ名}
-  詳細ファイル: docs/tasks/{要件名}/TASK-0001.md
+  詳細ファイル: docs/tumigidoc/{要件名}/tasks/TASK-0001.md
 
   【タスク概要】
   {タスクの概要}
@@ -558,7 +558,7 @@ description: |
   - 完了条件2
 activeForm: "{タスク名}を実装中"
 metadata: {
-  "task_file": "docs/tasks/{要件名}/TASK-0001.md",
+  "task_file": "docs/tumigidoc/{要件名}/tasks/TASK-0001.md",
   "phase": "Phase 1",
   "task_type": "TDD",
   "requirement_name": "{要件名}"

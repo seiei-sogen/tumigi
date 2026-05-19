@@ -11,7 +11,7 @@ description: 既存のコードベースから包括的なテストケースと�
 ## 前提条件
 
 - 分析対象のコードベースが存在する
-- `docs/spec/{要件名}/` ディレクトリが存在する（なければ作成）
+- `docs/tumigidoc/{要件名}/spec/` ディレクトリが存在する（なければ作成）
 - 可能であれば事前に `/tumigi:rev-requirements`, `/tumigi:rev-design` を実行済み
 
 ## 実行内容
@@ -52,9 +52,9 @@ description: 既存のコードベースから包括的なテストケースと�
    - テスト手順書
 
 7. **ファイルの作成**
-   - `docs/spec/{要件名}/test-specs.md` - テスト仕様書
-   - `docs/spec/{要件名}/test-cases.md` - テストケース一覧
-   - `docs/spec/{要件名}/tests/` - 生成されたテストコード
+   - `docs/tumigidoc/{要件名}/spec/test-specs.md` - テスト仕様書
+   - `docs/tumigidoc/{要件名}/spec/test-cases.md` - テストケース一覧
+   - `docs/tumigidoc/{要件名}/spec/tests/` - 生成されたテストコード
 
 ## 出力フォーマット例
 

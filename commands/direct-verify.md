@@ -90,11 +90,11 @@ DIRECTタスクで実行した設定作業の動作確認とテストを行い�
 - パフォーマンス基準を満たしている
 
 #### 更新対象ファイル
-1. **Overview ファイル**: `docs/tasks/{要件名}/overview.md` または `docs/tasks/{要件名}-overview.md`
+1. **Overview ファイル**: `docs/tumigidoc/{要件名}/tasks/overview.md`
    - 該当タスクの進捗状況を「完了」に更新
    - 完了日を記録
 
-2. **タスク詳細ファイル**: `docs/tasks/{要件名}/TASK-{task_id}.md` または `docs/tasks/{要件名}-tasks.md`
+2. **タスク詳細ファイル**: `docs/tumigidoc/{要件名}/tasks/TASK-{task_id}.md`
    - ステータスを「✅ 完了」に更新
    - 完了日を記録
    - 完了条件のチェックボックスを全て `[x]` に変更

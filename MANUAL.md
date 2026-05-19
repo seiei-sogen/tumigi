@@ -78,7 +78,7 @@ Kairoは以下を生成します：
 - エッジケースの考慮
 - 受け入れ基準
 
-生成されたファイル: `/docs/spec/{要件名}-requirements.md`
+生成されたファイル: `/docs/tumigidoc/{要件名}/spec/requirements.md`
 
 #### 3. 設計
 
@@ -97,7 +97,7 @@ Kairoは以下を生成します：
 - データベーススキーマ
 - APIエンドポイント仕様
 
-生成されたファイル: `/docs/design/{要件名}/` 配下
+生成されたファイル: `/docs/tumigidoc/{要件名}/design/` 配下
 
 #### 4. タスク分割
 
@@ -116,7 +116,7 @@ Kairoは以下を生成します：
 - 各タスクの詳細（テスト要件、UI/UX要件含む）
 - 実行順序とスケジュール
 
-生成されたファイル: `/docs/tasks/{要件名}/overview.md`、`/docs/tasks/{要件名}/TASK-XXXX.md`
+生成されたファイル: `/docs/tumigidoc/{要件名}/tasks/overview.md`、`/docs/tumigidoc/{要件名}/tasks/TASK-XXXX.md`
 
 #### 5. 実装
 
@@ -235,8 +235,8 @@ TASK作成時に `DIRECT` と判定している場合は、以下のコマンド
 
 **生成されるファイル**:
 
-- `docs/tasks/{要件名}/overview.md` - 機能ごとのタスク一覧
-- `docs/tasks/{要件名}/TASK-XXXX.md` - 個別タスクファイル
+- `docs/tumigidoc/{要件名}/tasks/overview.md` - 機能ごとのタスク一覧
+- `docs/tumigidoc/{要件名}/tasks/TASK-XXXX.md` - 個別タスクファイル
 
 **分析内容**:
 - コードベース構造の把握
@@ -251,11 +251,11 @@ TASK作成時に `DIRECT` と判定している場合は、以下のコマンド
 **目的**: 実装されたアーキテクチャから技術設計文書を生成
 
 **生成されるファイル**:
-- `docs/design/{要件名}/architecture.md`
-- `docs/design/{要件名}/dataflow.md`
-- `docs/design/{要件名}/api-endpoints.md`
-- `docs/design/{要件名}/database-schema.sql`
-- `docs/design/{要件名}/interfaces.ts`
+- `docs/tumigidoc/{要件名}/design/architecture.md`
+- `docs/tumigidoc/{要件名}/design/dataflow.md`
+- `docs/tumigidoc/{要件名}/design/api-endpoints.md`
+- `docs/tumigidoc/{要件名}/design/database-schema.sql`
+- `docs/tumigidoc/{要件名}/design/interfaces.ts`
 
 **分析内容**:
 - アーキテクチャパターンの特定
@@ -269,9 +269,9 @@ TASK作成時に `DIRECT` と判定している場合は、以下のコマンド
 **目的**: 実装コードからテストケースと仕様書を逆生成
 
 **生成されるファイル**:
-- `docs/spec/{要件名}/test-specs.md` - テスト仕様書
-- `docs/spec/{要件名}/test-cases.md` - テストケース一覧
-- `docs/spec/{要件名}/tests/` - 生成されたテストコード
+- `docs/tumigidoc/{要件名}/spec/test-specs.md` - テスト仕様書
+- `docs/tumigidoc/{要件名}/spec/test-cases.md` - テストケース一覧
+- `docs/tumigidoc/{要件名}/spec/tests/` - 生成されたテストコード
 
 **分析内容**:
 - 既存テストの分析
@@ -285,9 +285,9 @@ TASK作成時に `DIRECT` と判定している場合は、以下のコマンド
 **目的**: 実装機能から要件定義書をEARS記法で逆生成
 
 **生成されるファイル**:
-- `docs/spec/{要件名}/requirements.md`
-- `docs/spec/{要件名}/user-stories.md`
-- `docs/spec/{要件名}/acceptance-criteria.md`
+- `docs/tumigidoc/{要件名}/spec/requirements.md`
+- `docs/tumigidoc/{要件名}/spec/user-stories.md`
+- `docs/tumigidoc/{要件名}/spec/acceptance-criteria.md`
 
 **分析内容**:
 - ユーザーストーリーの逆算

@@ -6,16 +6,16 @@ description: タスクファイルから実装可能なTODOリストを作成し
 
 ## 入力
 
-- `docs/tasks/{要件名}-tasks.md` ファイル
+- `docs/tumigidoc/{要件名}/tasks/overview.md` および `docs/tumigidoc/{要件名}/tasks/TASK-*.md` ファイル
 - 各タスクのタスクID（{{task_id}}など）
 - 要件定義文書：
-  - `docs/spec/{要件名}-requirements.md`
+  - `docs/tumigidoc/{要件名}/spec/requirements.md`
 - 設計文書群：
-  - `docs/design/{要件名}/architecture.md`
-  - `docs/design/{要件名}/database-schema.sql`
-  - `docs/design/{要件名}/api-endpoints.md`
-  - `docs/design/{要件名}/interfaces.ts`
-  - `docs/design/{要件名}/dataflow.md`
+  - `docs/tumigidoc/{要件名}/design/architecture.md`
+  - `docs/tumigidoc/{要件名}/design/database-schema.sql`
+  - `docs/tumigidoc/{要件名}/design/api-endpoints.md`
+  - `docs/tumigidoc/{要件名}/design/interfaces.ts`
+  - `docs/tumigidoc/{要件名}/design/dataflow.md`
 
 ## 作成手順
 

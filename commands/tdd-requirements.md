@@ -12,10 +12,8 @@ TDD開発の要件整理を実施し、EARS要件定義書・設計文書を参�
 タスクID={{task_id}}
 要件名={{requirement_name}}
 信頼性評価=[]
-タスクファイル1=./docs/tasks/{要件名}/{{task_id}}.md
-タスクファイル2=./docs/tasks/{要件名}-phase*.md
-タスクoverviewファイル1=./docs/tasks/{要件名}/overview.md
-タスクoverviewファイル2=./docs/tasks/{要件名}-overview.md
+タスクファイル=./docs/tumigidoc/{要件名}/tasks/{{task_id}}.md
+タスクoverviewファイル=./docs/tumigidoc/{要件名}/tasks/overview.md
 出力ファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-requirements.md
 
 

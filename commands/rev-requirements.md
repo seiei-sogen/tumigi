@@ -11,7 +11,7 @@ description: 既存のコードベースから要件定義書を逆生成しま�
 ## 前提条件
 
 - 分析対象のコードベースが存在する
-- `docs/spec/{要件名}/` ディレクトリが存在する（なければ作成）
+- `docs/tumigidoc/{要件名}/spec/` ディレクトリが存在する（なければ作成）
 - 可能であれば事前に `/tumigi:rev-tasks` および `/tumigi:rev-design` を実行済み
 
 ## 実行内容
@@ -51,9 +51,9 @@ description: 既存のコードベースから要件定義書を逆生成しま�
    - 未実装のテストケースを推奨事項として提示
 
 7. **ファイルの作成**
-   - `docs/spec/{要件名}/requirements.md` として保存
-   - `docs/spec/{要件名}/user-stories.md` としてユーザーストーリーを保存
-   - `docs/spec/{要件名}/acceptance-criteria.md` として受け入れ基準を保存
+   - `docs/tumigidoc/{要件名}/spec/requirements.md` として保存
+   - `docs/tumigidoc/{要件名}/spec/user-stories.md` としてユーザーストーリーを保存
+   - `docs/tumigidoc/{要件名}/spec/acceptance-criteria.md` として受け入れ基準を保存
 
 ## 出力フォーマット例
 

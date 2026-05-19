@@ -11,7 +11,7 @@ description: 既存のコードベースから技術設計文書を逆生成し�
 ## 前提条件
 
 - 分析対象のコードベースが存在する
-- `docs/design/{要件名}/` ディレクトリが存在する（なければ作成）
+- `docs/tumigidoc/{要件名}/design/` ディレクトリが存在する（なければ作成）
 - 可能であれば事前に `/tumigi:rev-tasks` を実行済み
 
 ## 実行内容
@@ -53,11 +53,11 @@ description: 既存のコードベースから技術設計文書を逆生成し�
    - ルーティング設計
 
 7. **ファイルの作成**
-   - `docs/design/{要件名}/architecture.md` - アーキテクチャ概要
-   - `docs/design/{要件名}/dataflow.md` - データフロー図
-   - `docs/design/{要件名}/api-endpoints.md` - API仕様
-   - `docs/design/{要件名}/database-schema.sql` - DB設計
-   - `docs/design/{要件名}/interfaces.ts` - 型定義集約
+   - `docs/tumigidoc/{要件名}/design/architecture.md` - アーキテクチャ概要
+   - `docs/tumigidoc/{要件名}/design/dataflow.md` - データフロー図
+   - `docs/tumigidoc/{要件名}/design/api-endpoints.md` - API仕様
+   - `docs/tumigidoc/{要件名}/design/database-schema.sql` - DB設計
+   - `docs/tumigidoc/{要件名}/design/interfaces.ts` - 型定義集約
 
 ## 出力フォーマット例
 

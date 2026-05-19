@@ -27,10 +27,10 @@ noteファイル="./docs/implements/{要件名}/{{task_id}}/note.md"
    - 各ディレクトリ内のすべてのファイルを読み込み、追加ルールとして適用
 
   **Task tool (subagent_type: Explore, thoroughness: quick) を使用して実装関連情報を探索**
-    - `./docs/spec/{要件名}-requirements.md`: 統合機能要件と関連文書へ
-    - `./docs/spec/{要件名}-user-stories.md`: 詳細なユーザストーリー
-    - `./docs/spec/{要件名}-acceptance-criteria.md`: 受け入れ基準とテスト項目
-    - `./docs/spec/{要件名}-*.md`: 受け入れ基準とテスト項目
+    - `./docs/tumigidoc/{要件名}/spec/requirements.md`: 統合機能要件と関連文書へ
+    - `./docs/tumigidoc/{要件名}/spec/user-stories.md`: 詳細なユーザストーリー
+    - `./docs/tumigidoc/{要件名}/spec/acceptance-criteria.md`: 受け入れ基準とテスト項目
+    - `./docs/tumigidoc/{要件名}/spec/*.md`: 受け入れ基準とテスト項目
    - 既存の類似機能やユーティリティ関数を探索
    - 実装パターンやアーキテクチャガイドラインを特定
    - 依存関係やインポートパスを確認
@@ -71,9 +71,9 @@ noteファイル="./docs/implements/{要件名}/{{task_id}}/note.md"
 - **ディレクトリパスも相対パスで記載する**
 - 例:
   - ❌ `/Users/username/projects/myapp/src/utils/helper.ts`
-  - ❌ `/Users/username/projects/myapp/docs/spec/`
+  - ❌ `/Users/username/projects/myapp/docs/tumigidoc/`
   - ✅ `src/utils/helper.ts`
-  - ✅ `docs/spec/`
+  - ✅ `docs/tumigidoc/`
   - ✅ `backend/app/main.py`
   - ✅ `frontend/src/components/`
 
@@ -126,18 +126,18 @@ noteファイル="./docs/implements/{要件名}/{{task_id}}/note.md"
 - 参照元: docs/tech-stack.md
 - 参照元: backend/app/main.py
 - 参照元: frontend/src/components/TodoList.tsx
-- ディレクトリ: docs/spec/personal-todo-app/
+- ディレクトリ: docs/tumigidoc/personal-todo-app/spec/
 ```
 
 ❌ **誤った記載例（絶対に避ける）**:
 ```
 - 参照元: /Users/username/projects/ai/test02/docs/tech-stack.md
 - 参照元: /Users/username/projects/ai/test02/backend/app/main.py
-- ディレクトリ: /Users/username/projects/ai/test02/docs/spec/
+- ディレクトリ: /Users/username/projects/ai/test02/docs/tumigidoc/
 ```
 
 ### 実装時の注意
 
 1. **Read ツールで読み込むとき**: 絶対パスを使用して読み込む
 2. **ノートファイルに記載するとき**: 必ず相対パスに変換して記載する
-3. **ディレクトリパスも同様**: `/Users/.../docs/spec/` → `docs/spec/`
+3. **ディレクトリパスも同様**: `/Users/.../docs/tumigidoc/` → `docs/tumigidoc/`

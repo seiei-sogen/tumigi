@@ -7,7 +7,7 @@ Kairo開発の技術設計を実施し、PRD・EARS要件定義書・既存設�
 
 # context
 
-出力ディレクトリ="docs/design"
+出力ディレクトリ="docs/tumigidoc"
 要件名={{requirement_name}}
 作業規模={{work_scope}}
 信頼性評価=[]
@@ -53,19 +53,16 @@ Kairo開発の技術設計を実施し、PRD・EARS要件定義書・既存設�
 ## step3: 開発コンテキストの準備
 
 - **タスクノートの読み込み**
-  - `docs/spec/{要件名}/note.md` が存在する場合は読み込み
+  - `docs/tumigidoc/{要件名}/spec/note.md` が存在する場合は読み込み
   - 存在しない場合:
     - Task ツールを使用して subagent_type: "general-purpose" で `/tumigi:kairo-tasknote {要件名}` コマンドを実行してノートを生成
     - 生成されたノートファイルを読み込み
   - ノートには技術スタック、開発ルール、関連実装、設計文書、注意事項が含まれる
 
 - **要件定義書の読み込み**
-  - `./docs/spec/{要件名}-requirements.md` を読み込み
-  - `./docs/spec/{要件名}/requirements.md` を読み込み
-  - `./docs/spec/{要件名}-user-stories.md` が存在する場合は読み込み
-  - `./docs/spec/{要件名}/user-stories.md` が存在する場合は読み込み
-  - `./docs/spec/{要件名}-acceptance-criteria.md` が存在する場合は読み込み
-  - `./docs/spec/{要件名}/acceptance-criteria.md` が存在する場合は読み込み
+  - `./docs/tumigidoc/{要件名}/spec/requirements.md` を読み込み
+  - `./docs/tumigidoc/{要件名}/spec/user-stories.md` が存在する場合は読み込み
+  - `./docs/tumigidoc/{要件名}/spec/acceptance-criteria.md` が存在する場合は読み込み
   - EARS要件定義から機能要件と非機能要件を抽出
 
 - **追加ルールの読み込み**
@@ -80,7 +77,7 @@ Kairo開発の技術設計を実施し、PRD・EARS要件定義書・既存設�
   - どちらも存在しない場合は note.md の技術スタック情報を使用
 
 - **既存設計文書の調査**
-  - `docs/design/` ディレクトリ配下の既存設計文書を確認
+  - `docs/tumigidoc/{要件名}/design/` ディレクトリ配下の既存設計文書を確認
   - 既存のアーキテクチャ設計・データフロー図を読み込み
   - 既存のTypeScript型定義・DBスキーマ・API仕様を読み込み
   - Task tool (subagent_type: Explore, thoroughness: quick) を使用して関連設計文書を探索
@@ -213,21 +210,21 @@ AskUserQuestion ツールを使って、選択された項目に応じた質問�
   - Write ツールを使用して出力ファイルに保存
 
 - **出力ファイル**:
-  1. `docs/design/{要件名}/architecture.md`: アーキテクチャ概要
+  1. `docs/tumigidoc/{要件名}/design/architecture.md`: アーキテクチャ概要
      - <architecture_template> を使用
      - 各設計決定に信頼性レベル（🔵🟡🔴）と出典を記載
 
-  2. `docs/design/{要件名}/dataflow.md`: データフロー図
+  2. `docs/tumigidoc/{要件名}/design/dataflow.md`: データフロー図
      - <dataflow_template> を使用
      - 各フローに信頼性レベル（🔵🟡🔴）と出典を記載
 
-  3. `docs/design/{要件名}/design-interview.md`: ヒアリング記録
+  3. `docs/tumigidoc/{要件名}/design/design-interview.md`: ヒアリング記録
      - <design_interview_template> を使用
      - step4の質問と回答を記録
      - 信頼性レベルの変化を記録
 
   4. フル設計の場合:
-     - `docs/design/{要件名}/interfaces.ts` または対応する型定義ファイル: 型定義
+     - `docs/tumigidoc/{要件名}/design/interfaces.ts` または対応する型定義ファイル: 型定義
        - <interfaces_template> を使用
        - **重要**: 対象言語がTypeScriptでない場合はそれに合わせたファイル形式に変更
        - **重要**: インターフェース定義が不要なら生成しない
@@ -235,12 +232,12 @@ AskUserQuestion ツールを使って、選択された項目に応じた質問�
        - 既存の設計文書に型定義がある場合はそれを参照して追加
        - 各型定義に信頼性レベル（🔵🟡🔴）と出典をコメントで記載
 
-     - `docs/design/{要件名}/database-schema.sql` または対応するスキーマファイル: DBスキーマ
+     - `docs/tumigidoc/{要件名}/design/database-schema.sql` または対応するスキーマファイル: DBスキーマ
        - <database_schema_template> を使用
        - **重要**: 対象がデータベーススキーマが不要の場合は生成しない
        - 各テーブル定義に信頼性レベル（🔵🟡🔴）と出典をコメントで記載
 
-     - `docs/design/{要件名}/api-endpoints.md`: API仕様
+     - `docs/tumigidoc/{要件名}/design/api-endpoints.md`: API仕様
        - <api_endpoints_template> を使用
        - **重要**: 対象にAPIではない場合、または既存のAPIを利用する場合は生成しない
        - 各エンドポイントに信頼性レベル（🔵🟡🔴）と出典を記載
@@ -280,15 +277,15 @@ AskUserQuestion ツールを使って、選択された項目に応じた質問�
 ## ファイル名のルール
 
 ### 出力ファイルのパス形式
-- `docs/design/{要件名}/architecture.md`
-- `docs/design/{要件名}/dataflow.md`
-- `docs/design/{要件名}/design-interview.md`
-- `docs/design/{要件名}/interfaces.ts` (または対応する型定義ファイル)
-- `docs/design/{要件名}/database-schema.sql` (または対応するスキーマファイル)
-- `docs/design/{要件名}/api-endpoints.md`
+- `docs/tumigidoc/{要件名}/design/architecture.md`
+- `docs/tumigidoc/{要件名}/design/dataflow.md`
+- `docs/tumigidoc/{要件名}/design/design-interview.md`
+- `docs/tumigidoc/{要件名}/design/interfaces.ts` (または対応する型定義ファイル)
+- `docs/tumigidoc/{要件名}/design/database-schema.sql` (または対応するスキーマファイル)
+- `docs/tumigidoc/{要件名}/design/api-endpoints.md`
 
 ### ディレクトリ作成
-- `docs/design/{要件名}/` ディレクトリが存在しない場合は自動作成
+- `docs/tumigidoc/{要件名}/design/` ディレクトリが存在しない場合は自動作成
 - 必要に応じて親ディレクトリも作成
 
 ### ファイル名の命名規則

@@ -42,15 +42,15 @@ step1 を実行する
 
 ## step1: 追加ルールの読み込み
 
-- `docs/spec/{要件名}/note.md` が存在する場合は Read ツールで読み込む
+- `docs/tumigidoc/{要件名}/spec/note.md` が存在する場合は Read ツールで読み込む
 
 step2 を実行する
 
 ## step2: プロジェクト文書の読み込み
 
 以下のファイルを Read ツールで読み込む（存在するものを優先）:
-- `docs/tasks/{要件名}/overview.md` または `docs/tasks/{要件名}-overview.md`
-- `docs/tasks/{要件名}/TASK-{task_id}.md` または `docs/tasks/{要件名}-tasks.md`
+- `docs/tumigidoc/{要件名}/tasks/overview.md`
+- `docs/tumigidoc/{要件名}/tasks/TASK-{task_id}.md`
 - Claude Codeタスクの metadata に task_file がある場合はそのパスを優先使用
 - 依存タスクのファイルも読み込み、実装の順序と関連性を理解する
 

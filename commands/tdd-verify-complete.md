@@ -15,7 +15,7 @@ TDD開発でテストケースの実装が完全に完了しているかを検�
 要件定義ファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-requirements.md
 テストケースファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-testcases.md
 Refactorフェーズファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-refactor-phase.md
-元タスクファイル=docs/tasks/{taskfile}.md
+元タスクファイル=docs/tumigidoc/{要件名}/tasks/{taskfile}.md
 
 # step
 
@@ -39,7 +39,7 @@ Refactorフェーズファイル=./docs/implements/{要件名}/{{task_id}}/{feat
    - `./docs/implements/{要件名}/{{task_id}}/{feature_name}-memo.md` - 開発履歴メモ（存在する場合）
 
 3. **元タスクファイルを直接読み込み**
-   - `docs/tasks/{taskfile}.md` - タスクの完了状態を確認
+   - `docs/tumigidoc/{要件名}/tasks/{taskfile}.md` - タスクの完了状態を確認
    - プロジェクト全体のタスク進捗を把握
 
 読み込み完了後、step3 を実行する
@@ -291,7 +291,7 @@ step7 を実行する
 
 ## 確認すべきドキュメント
 
-- `docs/tasks/{taskファイルのパス}.md`
+- `docs/tumigidoc/{要件名}/tasks/{taskファイルのパス}.md`
 - `docs/implements/{要件名}/{{task_id}}/{feature_name}-requirements.md`
 - `docs/implements/{要件名}/{{task_id}}/{feature_name}-testcases.md`
 

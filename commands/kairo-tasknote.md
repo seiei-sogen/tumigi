@@ -7,7 +7,7 @@ Kairo開発の前にコンテキスト情報を収集し、開発に必要な情
 
 # context
 
-出力ディレクトリ="docs/spec"
+出力ディレクトリ="docs/tumigidoc"
 要件名={{requirement_name}}
 収集情報=[]
 
@@ -39,11 +39,11 @@ Kairo開発の前にコンテキスト情報を収集し、開発に必要な情
 ### Phase 2: 既存設計文書・仕様書の収集
 
 **既存の要件定義・設計書の検索**
-- `docs/spec/{要件名}-requirements.md`: 統合機能要件
-- `docs/spec/{要件名}-user-stories.md`: 詳細なユーザストーリー
-- `docs/spec/{要件名}-acceptance-criteria.md`: 受け入れ基準
-- `docs/spec/{要件名}-*.md`: その他関連ドキュメント
-- `docs/design/*.md`: 設計文書ディレクトリ
+- `docs/tumigidoc/{要件名}/spec/requirements.md`: 統合機能要件
+- `docs/tumigidoc/{要件名}/spec/user-stories.md`: 詳細なユーザストーリー
+- `docs/tumigidoc/{要件名}/spec/acceptance-criteria.md`: 受け入れ基準
+- `docs/tumigidoc/{要件名}/spec/*.md`: その他関連ドキュメント
+- `docs/tumigidoc/{要件名}/design/*.md`: 設計文書ディレクトリ
 - `docs/tech-stack.md`: 技術スタック
 - 見つかったファイルをすべて Read ツールで読み込み
 
@@ -103,11 +103,11 @@ Kairo開発の前にコンテキスト情報を収集し、開発に必要な情
 ## ファイル名のルール
 
 ### 出力ファイルのパス形式
-- `docs/spec/{要件名}/note.md`
-- 例: `docs/spec/user-auth-system/note.md`
+- `docs/tumigidoc/{要件名}/spec/note.md`
+- 例: `docs/tumigidoc/user-auth-system/spec/note.md`
 
 ### ディレクトリ作成
-- `docs/spec/{要件名}/` ディレクトリが存在しない場合は自動作成
+- `docs/tumigidoc/{要件名}/spec/` ディレクトリが存在しない場合は自動作成
 - 必要に応じて親ディレクトリも作成
 
 ### ファイル名の命名規則
@@ -174,7 +174,7 @@ Kairo開発の前にコンテキスト情報を収集し、開発に必要な情
 
 **参照元**:
 - [CLAUDE.md](CLAUDE.md)
-- [architecture.md](docs/design/architecture.md)
+- [architecture.md](docs/tumigidoc/{要件名}/design/architecture.md)
 
 ## 開発ルール
 
@@ -203,9 +203,9 @@ Kairo開発の前にコンテキスト情報を収集し、開発に必要な情
 {既存の要件定義の要約}
 
 **参照元**:
-- [requirements.md](docs/spec/{要件名}-requirements.md)
-- [user-stories.md](docs/spec/{要件名}-user-stories.md)
-- [acceptance-criteria.md](docs/spec/{要件名}-acceptance-criteria.md)
+- [requirements.md](docs/tumigidoc/{要件名}/spec/requirements.md)
+- [user-stories.md](docs/tumigidoc/{要件名}/spec/user-stories.md)
+- [acceptance-criteria.md](docs/tumigidoc/{要件名}/spec/acceptance-criteria.md)
 
 ### 主要な機能要件（EARS記法）
 - REQ-001: {要件の概要}
@@ -222,27 +222,27 @@ Kairo開発の前にコンテキスト情報を収集し、開発に必要な情
 ### アーキテクチャ設計
 {アーキテクチャの要約}
 
-**参照元**: [architecture.md](docs/design/architecture.md)
+**参照元**: [architecture.md](docs/tumigidoc/{要件名}/design/architecture.md)
 
 ### データフロー
 {データフローの要約}
 
-**参照元**: [dataflow.md](docs/design/dataflow.md)
+**参照元**: [dataflow.md](docs/tumigidoc/{要件名}/design/dataflow.md)
 
 ### TypeScript型定義
 {主要な型定義の要約}
 
-**参照元**: [interfaces.ts](docs/design/interfaces.ts)
+**参照元**: [interfaces.ts](docs/tumigidoc/{要件名}/design/interfaces.ts)
 
 ### データベース設計
 {DBスキーマの要約}
 
-**参照元**: [database-schema.sql](docs/design/database-schema.sql)
+**参照元**: [database-schema.sql](docs/tumigidoc/{要件名}/design/database-schema.sql)
 
 ### API仕様
 {APIエンドポイントの要約}
 
-**参照元**: [api-endpoints.md](docs/design/api-endpoints.md)
+**参照元**: [api-endpoints.md](docs/tumigidoc/{要件名}/design/api-endpoints.md)
 
 ## 関連実装
 
@@ -319,16 +319,16 @@ Kairo開発の前にコンテキスト情報を収集し、開発に必要な情
 - [docs/rule/kairo/](docs/rule/kairo/)
 
 ### 要件定義・仕様書
-- [docs/spec/{要件名}-requirements.md](docs/spec/{要件名}-requirements.md)
-- [docs/spec/{要件名}-user-stories.md](docs/spec/{要件名}-user-stories.md)
-- [docs/spec/{要件名}-acceptance-criteria.md](docs/spec/{要件名}-acceptance-criteria.md)
+- [docs/tumigidoc/{要件名}/spec/requirements.md](docs/tumigidoc/{要件名}/spec/requirements.md)
+- [docs/tumigidoc/{要件名}/spec/user-stories.md](docs/tumigidoc/{要件名}/spec/user-stories.md)
+- [docs/tumigidoc/{要件名}/spec/acceptance-criteria.md](docs/tumigidoc/{要件名}/spec/acceptance-criteria.md)
 
 ### 設計文書
-- [docs/design/architecture.md](docs/design/architecture.md)
-- [docs/design/dataflow.md](docs/design/dataflow.md)
-- [docs/design/interfaces.ts](docs/design/interfaces.ts)
-- [docs/design/database-schema.sql](docs/design/database-schema.sql)
-- [docs/design/api-endpoints.md](docs/design/api-endpoints.md)
+- [docs/tumigidoc/architecture.md](docs/tumigidoc/{要件名}/design/design/architecture.md)
+- [docs/tumigidoc/dataflow.md](docs/tumigidoc/{要件名}/design/design/dataflow.md)
+- [docs/tumigidoc/interfaces.ts](docs/tumigidoc/{要件名}/design/design/interfaces.ts)
+- [docs/tumigidoc/database-schema.sql](docs/tumigidoc/{要件名}/design/design/database-schema.sql)
+- [docs/tumigidoc/api-endpoints.md](docs/tumigidoc/{要件名}/design/design/api-endpoints.md)
 
 ### 関連実装（オプション）
 - [{実装ファイル1}]({実装ファイル1})

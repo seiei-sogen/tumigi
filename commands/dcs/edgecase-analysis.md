@@ -39,7 +39,7 @@ argument-hint: [要件名]
 ## step0: 分析モードの判定
 
 - 要件定義書の確認
-  - `docs/spec/{$1}/requirements.md` が存在するか確認
+  - `docs/tumigidoc/{$1}/spec/requirements.md` が存在するか確認
   - 存在する場合:
     - 要件定義書ベースの分析を実施
     - context を更新:
@@ -71,16 +71,16 @@ argument-hint: [要件名]
 ## step1: 要件情報の収集（要件定義書ベース）
 
 - 要件定義書の確認
-  - `docs/spec/{要件名}/requirements.md` を Read で読み込み
+  - `docs/tumigidoc/{要件名}/spec/requirements.md` を Read で読み込み
   - 読み込んだ内容を一時変数に保存
 
 - 設計文書の確認
-  - `docs/spec/{要件名}/design.md` が存在する場合は読み込み
-  - `docs/design/` ディレクトリ内の関連設計文書を検索・読み込み
+  - `docs/tumigidoc/{要件名}/spec/design.md` が存在する場合は読み込み
+  - `docs/tumigidoc/{要件名}/design/` ディレクトリ内の関連設計文書を検索・読み込み
   - 読み込んだ内容を一時変数に保存
 
 - タスクノートの確認
-  - `docs/spec/{要件名}/note.md` が存在する場合は読み込み
+  - `docs/tumigidoc/{要件名}/spec/note.md` が存在する場合は読み込み
   - 読み込んだ内容を一時変数に保存
 
 - 既存のエッジケース分析の確認

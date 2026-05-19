@@ -11,7 +11,7 @@ description: 既存のコードベースを分析し、実装されている機�
 ## 前提条件
 
 - 分析対象のコードベースが存在する
-- `docs/tasks/` ディレクトリが存在する（なければ作成）
+- `docs/tumigidoc/` ディレクトリが存在する（なければ作成）
 - TypeScript/JavaScript、Python、その他のコードを分析可能
 
 ## {要件名}の命名規則
@@ -32,18 +32,21 @@ description: 既存のコードベースを分析し、実装されている機�
 各機能ごとに独立したディレクトリを作成する:
 
 ```
-docs/tasks/
+docs/tumigidoc/
 ├── user-authentication/
-│   ├── overview.md
-│   ├── TASK-0001.md
-│   └── TASK-0002.md
+│   └── tasks/
+│       ├── overview.md
+│       ├── TASK-0001.md
+│       └── TASK-0002.md
 ├── product-search/
-│   ├── overview.md
-│   ├── TASK-0001.md
-│   └── TASK-0002.md
+│   └── tasks/
+│       ├── overview.md
+│       ├── TASK-0001.md
+│       └── TASK-0002.md
 └── order-management/
-    ├── overview.md
-    └── TASK-0001.md
+    └── tasks/
+        ├── overview.md
+        └── TASK-0001.md
 ```
 
 ## 実行内容
@@ -93,8 +96,8 @@ docs/tasks/
 
 8. **ファイルの作成**
    - 各機能（{要件名}）ごとにディレクトリを作成
-   - `docs/tasks/{要件名}/overview.md` として機能ごとのタスク一覧を保存
-   - 各タスクを `docs/tasks/{要件名}/{TASK-ID}.md` として個別ファイルに保存
+   - `docs/tumigidoc/{要件名}/tasks/overview.md` として機能ごとのタスク一覧を保存
+   - 各タスクを `docs/tumigidoc/{要件名}/tasks/{TASK-ID}.md` として個別ファイルに保存
 
 ## 出力フォーマット例
 

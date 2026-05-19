@@ -7,7 +7,7 @@ Kairo開発の要件整理を実施し、PRD・EARS要件定義書・設計文�
 
 # context
 
-出力ディレクトリ="docs/spec"
+出力ディレクトリ="docs/tumigidoc/{要件名}/spec"
 要件名={{requirement_name}}
 PRDファイル={{prd_file_path}}
 作業規模={{work_scope}}
@@ -54,7 +54,7 @@ PRDファイル={{prd_file_path}}
 ## step3: 開発コンテキストの準備
 
 - **タスクノートの読み込み**
-  - `docs/spec/{要件名}/note.md` が存在する場合は読み込み
+  - `docs/tumigidoc/{要件名}/spec/note.md` が存在する場合は読み込み
   - 存在しない場合:
     - Task ツールを使用して subagent_type: "general-purpose" で `/tumigi:kairo-tasknote {要件名}` コマンドを実行してノートを生成
     - 生成されたノートファイルを読み込み
@@ -211,22 +211,22 @@ AskUserQuestion ツールを使って、選択された項目に応じた質問�
   - Write ツールを使用して出力ファイルに保存
 
 - **出力ファイル**:
-  1. `docs/spec/{要件名}/requirements.md`: 統合機能要件と関連文書へのリンク
+  1. `docs/tumigidoc/{要件名}/spec/requirements.md`: 統合機能要件と関連文書へのリンク
      - <full_requirements_template> または <minimal_requirements_template> を使用
      - 各要件に信頼性レベル（🔵🟡🔴）と出典を記載
 
-  2. `docs/spec/{要件名}/interview-record.md`: ヒアリング記録
+  2. `docs/tumigidoc/{要件名}/spec/interview-record.md`: ヒアリング記録
      - <interview_record_template> を使用
      - step4の質問と回答を記録
      - 信頼性レベルの変化を記録
 
   3. フル機能開発の場合:
-     - `docs/spec/{要件名}/user-stories.md`: 詳細なユーザストーリー
+     - `docs/tumigidoc/{要件名}/spec/user-stories.md`: 詳細なユーザストーリー
        - <user_stories_template> を使用
        - **重要**: 各ストーリーに信頼性レベル（🔵🟡🔴）と出典を記載
        - 信頼性レベルサマリーを含める
 
-     - `docs/spec/{要件名}/acceptance-criteria.md`: 受け入れ基準とテスト項目
+     - `docs/tumigidoc/{要件名}/spec/acceptance-criteria.md`: 受け入れ基準とテスト項目
        - <acceptance_criteria_template> を使用
        - **重要**: 各受け入れ基準とテストケースに信頼性レベル（🔵🟡🔴）と出典を記載
        - 信頼性レベル分布を含める
@@ -260,7 +260,7 @@ AskUserQuestion ツールを使って、選択された項目に応じた質問�
 
 ### 出力
 
-- `docs/spec/{要件名}/prep.md` に <prep_template> を使用して書き出す
+- `docs/tumigidoc/{要件名}/spec/prep.md` に <prep_template> を使用して書き出す
 - 各タスクに優先度（必須/推奨）と信頼性レベル（🔵🟡🔴）を記載
 - step6 を実行する
 
@@ -290,12 +290,12 @@ AskUserQuestion ツールを使って、選択された項目に応じた質問�
 ## ファイル名のルール
 
 ### 出力ファイルのパス形式
-- `docs/spec/{要件名}/requirements.md`
-- `docs/spec/{要件名}/interview-record.md`
-- `docs/spec/{要件名}/user-stories.md` (フル機能開発のみ)
-- `docs/spec/{要件名}/acceptance-criteria.md` (フル機能開発のみ)
-- `docs/spec/{要件名}/note.md` (コンテキストノート)
-- `docs/spec/{要件名}/prep.md` (ユーザー準備タスクがある場合のみ)
+- `docs/tumigidoc/{要件名}/spec/requirements.md`
+- `docs/tumigidoc/{要件名}/spec/interview-record.md`
+- `docs/tumigidoc/{要件名}/spec/user-stories.md` (フル機能開発のみ)
+- `docs/tumigidoc/{要件名}/spec/acceptance-criteria.md` (フル機能開発のみ)
+- `docs/tumigidoc/{要件名}/spec/note.md` (コンテキストノート)
+- `docs/tumigidoc/{要件名}/spec/prep.md` (ユーザー準備タスクがある場合のみ)
 
 ### ファイル名の命名規則
 - 要件名を簡潔な英語に変換する

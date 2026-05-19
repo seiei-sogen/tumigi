@@ -14,10 +14,8 @@ TDD開発のテストケース洗い出しを実施し、要件定義書を参�
 信頼性評価=[]
 要件定義ファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-requirements.md
 出力ファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-testcases.md
-タスクファイル1=./docs/tasks/{要件名}/{{task_id}}.md
-タスクファイル2=./docs/tasks/{要件名}-phase*.md
-タスクoverviewファイル1=./docs/tasks/{要件名}/overview.md
-タスクoverviewファイル2=./docs/tasks/{要件名}-overview.md
+タスクファイル=./docs/tumigidoc/{要件名}/tasks/{{task_id}}.md
+タスクoverviewファイル=./docs/tumigidoc/{要件名}/tasks/overview.md
 
 # step
 

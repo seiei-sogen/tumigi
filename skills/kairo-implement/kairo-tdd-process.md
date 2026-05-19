@@ -122,7 +122,7 @@ AskUserQuestion ツールでユーザーの選択を取得する:
 
 ## step-h: タスク完了処理
 
-- `docs/tasks/{要件名}/overview.md` の完了チェックボックスを更新する:
+- `docs/tumigidoc/{要件名}/tasks/overview.md` の完了チェックボックスを更新する:
   - `[ ] **タスク完了**` → `[x] **タスク完了**`
 - TaskUpdate でステータスを 'completed' に更新する
 - 実装サマリーを以下の形式で表示する:

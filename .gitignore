@@ -35,6 +35,8 @@ tmp/
 
 # Version management
 .tool-versions
+
+# Personal notes
 tumigi-llm.md
 # CocoIndex Code (ccc)
 /.cocoindex_code/
