@@ -7,13 +7,13 @@ TDD開発のテストケース洗い出しを実施し、要件定義書を参�
 
 # context
 
-出力ディレクトリ="./docs/implements"
+出力ディレクトリ="docs/tumigidoc"
 機能名={{feature_name}}
 タスクID={{task_id}}
 要件名={{requirement_name}}
 信頼性評価=[]
-要件定義ファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-requirements.md
-出力ファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-testcases.md
+要件定義ファイル=./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-requirements.md
+出力ファイル=./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-testcases.md
 タスクファイル=./docs/tumigidoc/{要件名}/tasks/{{task_id}}.md
 タスクoverviewファイル=./docs/tumigidoc/{要件名}/tasks/overview.md
 
@@ -28,13 +28,13 @@ TDD開発のテストケース洗い出しを実施し、要件定義書を参�
 - 開発コンテキストの準備を実行する：
 
   **1. タスクノートの読み込み（唯一のコンテキストソース）**
-  - `./docs/implements/{要件名}/{{task_id}}/note.md` を読み込み
+  - `./docs/tumigidoc/{要件名}/implements/{{task_id}}/note.md` を読み込み
   - 存在しない場合: @task で `/tumigi:tdd-tasknote {要件名} {{task_id}}` を実行して生成
   - note.mdには技術スタック、開発ルール、関連実装、設計文書、テスト関連情報、注意事項が集約済み
 
   **2. 直前フェーズの出力を読み込み**
-  - `./docs/implements/{要件名}/{{task_id}}/{feature_name}-requirements.md` - 要件定義
-  - `./docs/implements/{要件名}/{{task_id}}/{feature_name}-testcases.md` - 既存のテストケース（存在する場合）
+  - `./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-requirements.md` - 要件定義
+  - `./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-testcases.md` - 既存のテストケース（存在する場合）
 
 - 読み込み完了後、step3 を実行する
 
@@ -79,8 +79,8 @@ TDD開発のテストケース洗い出しを実施し、要件定義書を参�
 ## ファイル名のルール
 
 ### 出力ファイルのパス形式
-- `docs/implements/{要件名}/{task_id}/{feature_name}-testcases.md`
-- 例: `docs/implements/user-auth/task-001/login-testcases.md`
+- `docs/tumigidoc/{要件名}/implements/{task_id}/{feature_name}-testcases.md`
+- 例: `docs/tumigidoc/user-auth/implements/task-001/login-testcases.md`
 
 ### ファイル名の命名規則
 - 機能名を簡潔な英語に変換する

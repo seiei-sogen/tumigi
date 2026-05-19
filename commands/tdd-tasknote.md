@@ -7,12 +7,12 @@ TDD開発の前にコンテキスト情報を収集し、開発に必要な情�
 
 # context
 
-出力ディレクトリ="./docs/implements"
+出力ディレクトリ="docs/tumigidoc"
 機能名={{feature_name}}
 タスクID={{task_id}}
 要件名={{requirement_name}}
 収集情報=[]
-noteファイル="./docs/implements/{要件名}/{{task_id}}/note.md"
+noteファイル="./docs/tumigidoc/{要件名}/implements/{{task_id}}/note.md"
 
 # step
 
@@ -41,7 +41,7 @@ noteファイル="./docs/implements/{要件名}/{{task_id}}/note.md"
      - E2Eテスト設定（UIタスクの場合）
 
   **関連ファイルを直接読み込み**
-   - `./docs/implements/{要件名}/{{task_id}}/*.md` - taskに関係する全てのファイルを読み込み
+   - `./docs/tumigidoc/{要件名}/implements/{{task_id}}/*.md` - taskに関係する全てのファイルを読み込み
    - 関連する設計文書やタスクファイルも必要に応じて読み込み
 
 - 収集した情報を整理して {{noteファイル}} に保存する
@@ -52,8 +52,8 @@ noteファイル="./docs/implements/{要件名}/{{task_id}}/note.md"
 ## ファイル名のルール
 
 ### 出力ファイルのパス形式
-- `./docs/implements/{要件名}/{{task_id}}/note.md`
-- 例: `docs/implements/user-auth/task-0001/note.md`
+- `./docs/tumigidoc/{要件名}/implements/{{task_id}}/note.md`
+- 例: `docs/tumigidoc/user-auth/implements/task-0001/note.md`
 
 ### ファイル名の命名規則
 - 機能名を簡潔な英語に変換する

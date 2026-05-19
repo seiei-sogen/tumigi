@@ -34,7 +34,7 @@ DIRECTタスクで実行した設定作業の動作確認とテストを行い�
 ### 3. 設定の確認
 - 読み込んだ技術スタック定義に基づいて検証項目を特定
 - Task tool (subagent_type: Explore, thoroughness: quick) を使用して関連設定や検証パターンを探索
-- `docs/implements/{要件名}/{TASK-ID}/setup-report.md` をReadツールで読み込み、設定作業の結果を確認
+- `docs/tumigidoc/{要件名}/implements/{TASK-ID}/setup-report.md` をReadツールで読み込み、設定作業の結果を確認
 - 環境変数の確認
 - 設定ファイルの内容確認
 - 依存関係のインストール状況確認
@@ -71,7 +71,7 @@ DIRECTタスクで実行した設定作業の動作確認とテストを行い�
 - 既存の情報が古い場合は更新。ファイルがなければ必要に応じて新規作成
 
 ### 8. 検証レポートの作成
-- `docs/implements/{要件名}/{TASK-ID}/verify-report.md` を作成
+- `docs/tumigidoc/{要件名}/implements/{TASK-ID}/verify-report.md` を作成
 - 全ての確認結果を記録
 - 発見された問題と解決内容を記載
 - CLAUDE.mdへの記録内容を記載
@@ -101,7 +101,7 @@ DIRECTタスクで実行した設定作業の動作確認とテストを行い�
 
 ## 出力先
 
-確認記録は `docs/implements/{要件名}/{TASK-ID}/` ディレクトリに以下のファイルとして作成されます：
+確認記録は `docs/tumigidoc/{要件名}/implements/{TASK-ID}/` ディレクトリに以下のファイルとして作成されます：
 - `verify-report.md`: 設定確認・動作テスト記録
 
 ## CLAUDE.mdへの記録

@@ -7,14 +7,14 @@ TDD開発でテストケースの実装が完全に完了しているかを検�
 
 # context
 
-出力ディレクトリ="./docs/implements"
+出力ディレクトリ="docs/tumigidoc"
 機能名={{feature_name}}
 タスクID={{task_id}}
 要件名={{requirement_name}}
-メモファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-memo.md
-要件定義ファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-requirements.md
-テストケースファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-testcases.md
-Refactorフェーズファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-refactor-phase.md
+メモファイル=./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-memo.md
+要件定義ファイル=./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-requirements.md
+テストケースファイル=./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-testcases.md
+Refactorフェーズファイル=./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-refactor-phase.md
 元タスクファイル=docs/tumigidoc/{要件名}/tasks/{taskfile}.md
 
 # step
@@ -28,15 +28,15 @@ Refactorフェーズファイル=./docs/implements/{要件名}/{{task_id}}/{feat
 検証コンテキストの準備を実行する：
 
 1. **タスクノートの読み込み（唯一のコンテキストソース）**
-   - `./docs/implements/{要件名}/{{task_id}}/note.md` を読み込み
+   - `./docs/tumigidoc/{要件名}/implements/{{task_id}}/note.md` を読み込み
    - 存在しない場合: @task で `/tumigi:tdd-tasknote {要件名} {{task_id}}` を実行して生成
    - note.mdには技術スタック、開発ルール、関連実装、設計文書、テスト関連情報、注意事項が集約済み
 
 2. **直前フェーズの出力を読み込み**
-   - `./docs/implements/{要件名}/{{task_id}}/{feature_name}-requirements.md` - 要件定義
-   - `./docs/implements/{要件名}/{{task_id}}/{feature_name}-testcases.md` - テストケース定義
-   - `./docs/implements/{要件名}/{{task_id}}/{feature_name}-refactor-phase.md` - Refactorフェーズの結果
-   - `./docs/implements/{要件名}/{{task_id}}/{feature_name}-memo.md` - 開発履歴メモ（存在する場合）
+   - `./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-requirements.md` - 要件定義
+   - `./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-testcases.md` - テストケース定義
+   - `./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-refactor-phase.md` - Refactorフェーズの結果
+   - `./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-memo.md` - 開発履歴メモ（存在する場合）
 
 3. **元タスクファイルを直接読み込み**
    - `docs/tumigidoc/{要件名}/tasks/{taskfile}.md` - タスクの完了状態を確認
@@ -292,8 +292,8 @@ step7 を実行する
 ## 確認すべきドキュメント
 
 - `docs/tumigidoc/{要件名}/tasks/{taskファイルのパス}.md`
-- `docs/implements/{要件名}/{{task_id}}/{feature_name}-requirements.md`
-- `docs/implements/{要件名}/{{task_id}}/{feature_name}-testcases.md`
+- `docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-requirements.md`
+- `docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-testcases.md`
 
 ## 🎯 最終結果 ([日時])
 - **実装率**: [数]% ([実装数]/[予定数]テストケース)

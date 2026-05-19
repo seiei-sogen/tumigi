@@ -14,7 +14,7 @@ argument-hint: "[テストファイルパス（省略可）]"
    - `max_global_round: 3` — 最大ラウンド数
 
 2. **テストコマンドの決定**
-   - tasknote（`./docs/implements/**/note.md`）に `test_command` フィールドがあればそこから読み取り
+   - tasknote（`./docs/tumigidoc/**/implements/**/note.md`）に `test_command` フィールドがあればそこから読み取り
    - tasknoteにない場合、以下の順序で情報を収集して決定:
      - **a. プロジェクトドキュメントの確認**（存在するもののみ読み取り）:
        - `CLAUDE.md` — テスト実行方法、開発ルール、プロジェクト固有の指示

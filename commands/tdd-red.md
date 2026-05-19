@@ -7,18 +7,18 @@ TDDのRedフェーズを実行します。失敗するテストケースを作�
 
 # context
 
-出力ディレクトリ="./docs/implements"
+出力ディレクトリ="docs/tumigidoc"
 機能名={{feature_name}}
 タスクID={{task_id}}
 要件名={{requirement_name}}
 対象テストケース={{test_case_name}}
 テストケース追加目標数=10以上
 信頼性評価=[]
-要件定義ファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-requirements.md
-テストケース定義ファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-testcases.md
-Redフェーズファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-red-phase.md
-メモファイル=./docs/implements/{要件名}/{{task_id}}/{feature_name}-memo.md
-タスクノートファイル=./docs/implements/{要件名}/{{task_id}}/note.md
+要件定義ファイル=./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-requirements.md
+テストケース定義ファイル=./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-testcases.md
+Redフェーズファイル=./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-red-phase.md
+メモファイル=./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-memo.md
+タスクノートファイル=./docs/tumigidoc/{要件名}/implements/{{task_id}}/note.md
 
 # step
 
@@ -31,15 +31,15 @@ Redフェーズファイル=./docs/implements/{要件名}/{{task_id}}/{feature_n
 開発コンテキストの準備を実行する：
 
 **1. タスクノートの読み込み（唯一のコンテキストソース）**
-- `./docs/implements/{要件名}/{{task_id}}/note.md` を読み込み
+- `./docs/tumigidoc/{要件名}/implements/{{task_id}}/note.md` を読み込み
 - 存在しない場合: @task で `/tumigi:tdd-tasknote {要件名} {{task_id}}` を実行して生成
 - note.mdには技術スタック、開発ルール、関連実装、設計文書、テスト関連情報、注意事項が集約済み
 
 **2. 直前フェーズの出力を読み込み**
-- `./docs/implements/{要件名}/{{task_id}}/{feature_name}-requirements.md` - 要件定義
-- `./docs/implements/{要件名}/{{task_id}}/{feature_name}-testcases.md` - テストケース定義
-- `./docs/implements/{要件名}/{{task_id}}/{feature_name}-red-phase.md` - 既存のRedフェーズ記録（存在する場合）
-- `./docs/implements/{要件名}/{{task_id}}/{feature_name}-memo.md` - 開発履歴メモ（存在する場合）
+- `./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-requirements.md` - 要件定義
+- `./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-testcases.md` - テストケース定義
+- `./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-red-phase.md` - 既存のRedフェーズ記録（存在する場合）
+- `./docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-memo.md` - 開発履歴メモ（存在する場合）
 
 読み込み完了後、step3 を実行する
 
@@ -125,8 +125,8 @@ Redフェーズファイル=./docs/implements/{要件名}/{{task_id}}/{feature_n
 - テストファイル: プロジェクトの技術スタックに応じた適切なディレクトリ
   - 例: `tests/unit/{feature_name}.test.js`
   - 例: `tests/e2e/{feature_name}.spec.js`
-- メモファイル: `docs/implements/{要件名}/{task_id}/{feature_name}-memo.md`
-- Redフェーズ記録: `docs/implements/{要件名}/{task_id}/{feature_name}-red-phase.md`
+- メモファイル: `docs/tumigidoc/{要件名}/implements/{task_id}/{feature_name}-memo.md`
+- Redフェーズ記録: `docs/tumigidoc/{要件名}/implements/{task_id}/{feature_name}-red-phase.md`
 
 ### ファイル名の命名規則
 - 機能名を簡潔な英語に変換する
@@ -314,7 +314,7 @@ expect(result.errors).toContain('error message'); // 【確認内容】: [特定
 
 ## TDDメモファイル形式
 
-`docs/implements/{要件名}/{{task_id}}/{feature_name}-memo.md` ファイルの形式：
+`docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-memo.md` ファイルの形式：
 
 ```markdown
 # TDD開発メモ: {feature_name}
@@ -328,8 +328,8 @@ expect(result.errors).toContain('error message'); // 【確認内容】: [特定
 ## 関連ファイル
 
 - 元タスクファイル: `docs/tumigidoc/{要件名}/tasks/{taskファイルのパス}.md`
-- 要件定義: `docs/implements/{要件名}/{{task_id}}/{feature_name}-requirements.md`
-- テストケース定義: `docs/implements/{要件名}/{{task_id}}/{feature_name}-testcases.md`
+- 要件定義: `docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-requirements.md`
+- テストケース定義: `docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-testcases.md`
 - 実装ファイル: `[実装ファイルのパス]`
 - テストファイル: `[テストファイルのパス]`
 

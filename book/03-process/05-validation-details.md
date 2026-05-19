@@ -84,13 +84,13 @@ Coverage: 94%
 ## ドキュメント確認リスト
 
 ### 必須ファイル
-- docs/implements/{{task_id}}/{feature_name}-requirements.md
-- docs/implements/{{task_id}}/{feature_name}-testcases.md  
+- docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-requirements.md
+- docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-testcases.md  
 - docs/todo.md
 
 ### オプションファイル（存在する場合）
-- docs/implements/{{task_id}}/{test_case_name}-memo.md
-- docs/implements/{{task_id}}/{feature_name}-architecture.md
+- docs/tumigidoc/{要件名}/implements/{{task_id}}/{test_case_name}-memo.md
+- docs/tumigidoc/{要件名}/implements/{{task_id}}/{feature_name}-architecture.md
 ```
 
 #### 確認内容例
