@@ -1,23 +1,23 @@
 {
-  "name": "tsumiki",
+  "name": "tumigi",
   "private": false,
   "version": "0.0.7",
   "description": "AI-driven development framework for Claude Code",
   "keywords": [
-    "tsumiki",
+    "tumigi",
     "claude",
     "claudecode",
     "ai",
     "tdd",
     "plugin"
   ],
-  "homepage": "https://github.com/classmethod/tsumiki#readme",
+  "homepage": "https://github.com/seiei-sogen/tumigi#readme",
   "bugs": {
-    "url": "https://github.com/classmethod/tsumiki/issues"
+    "url": "https://github.com/seiei-sogen/tumigi/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/classmethod/tsumiki.git"
+    "url": "https://github.com/seiei-sogen/tumigi.git"
   },
   "license": "MIT",
   "author": {

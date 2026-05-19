@@ -1,11 +1,11 @@
 ---
 name: dev-navigate
-description: This skill should be used when the user asks to "dev-navigate", "どこから始めれば", "何を使えばいい", "スキルを選んで", "ナビ", "navigate", "which skill", "how to start", "開発の進め方", "何から始める". 開発者がやりたいことをヒアリングし、最適なtsumikiスキルとその実行順序をナビゲーションする。
+description: This skill should be used when the user asks to "dev-navigate", "どこから始めれば", "何を使えばいい", "スキルを選んで", "ナビ", "navigate", "which skill", "how to start", "開発の進め方", "何から始める". 開発者がやりたいことをヒアリングし、最適なtumigiスキルとその実行順序をナビゲーションする。
 ---
 
 # Dev Navigate
 
-開発者がやりたいことを対話で把握し、最適なtsumikiスキルの開始ポイントを提案するナビゲーションスキル。提案後、ユーザーの承認があればそのスキルを起動する。
+開発者がやりたいことを対話で把握し、最適なtumigiスキルの開始ポイントを提案するナビゲーションスキル。提案後、ユーザーの承認があればそのスキルを起動する。
 
 ## 対象スキル一覧
 

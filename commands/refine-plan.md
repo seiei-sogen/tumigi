@@ -57,7 +57,7 @@ timestamp=""
 - <plan_template> の内容を context の情報で埋めて Write ツールでファイルに出力する
   - 出力ファイル: "{{ベースディレクトリ}}/plan.md"
 - 出力したファイルのパスをユーザーに報告する
-- 「`/tsumiki:refine-execute {{ベースディレクトリ}}/plan.md` を実行すると修正を開始します」と案内する
+- 「`/tumigi:refine-execute {{ベースディレクトリ}}/plan.md` を実行すると修正を開始します」と案内する
 
 # rules
 
@@ -186,5 +186,5 @@ timestamp=""
 
 ---
 
-*このplanファイルは `/tsumiki:refine-execute {{ベースディレクトリ}}/plan.md` で実行できます*
+*このplanファイルは `/tumigi:refine-execute {{ベースディレクトリ}}/plan.md` で実行できます*
 </plan_template>

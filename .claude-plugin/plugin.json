@@ -1,13 +1,13 @@
 {
-  "name": "tsumiki",
+  "name": "tumigi",
   "version": "1.4.1",
   "description": "AI-driven development toolkit for TDD and SDD workflows, providing comprehensive command templates and agents to enhance developer productivity with Claude Code",
   "author": {
     "name": "makoto kuroeda",
     "email": "kuroeda.makoto@classmethod.jp"
   },
-  "homepage": "https://github.com/classmethod/tsumiki",
-  "repository": "https://github.com/classmethod/tsumiki",
+  "homepage": "https://github.com/seiei-sogen/tumigi",
+  "repository": "https://github.com/seiei-sogen/tumigi",
   "license": "MIT",
   "keywords": ["ai-development", "sdd", "tdd"],
   "commands": "./commands/",

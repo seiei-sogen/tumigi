@@ -1,17 +1,17 @@
-# Tsumiki マニュアル
+# Tumigi マニュアル
 
 ## 使用方法
 
 ### セットアップ
 
-Claude Code Pluginを使用してTsumikiをインストールします：
+Claude Code Pluginを使用してTumigiをインストールします：
 
 ```bash
-/plugin marketplace add https://github.com/classmethod/tsumiki.git
-/plugin install tsumiki@tsumiki
+/plugin marketplace add https://github.com/seiei-sogen/tumigi.git
+/plugin install tumigi@tumigi
 ```
 
-**注意**: コマンドは `/tsumiki:` プレフィックス付きで実行します（例：`/tsumiki:kairo-requirements`）。
+**注意**: コマンドは `/tumigi:` プレフィックス付きで実行します（例：`/tumigi:kairo-requirements`）。
 
 #### プロジェクト固有のルール設定
 
@@ -41,7 +41,7 @@ claude_docker/ ディレクトリを参考に構築してください（plugin�
 仕組みは、hooksを利用してtool実行のうち許可されてないものは全てdocker上で動作するコマンドを書き換えています
 
 テスト済みの動作環境は、Mac/RancherDesktop(docker)/go です
-※これはtsumikiの長時間実行の試験をする目的で作成されました。実プロジェクトでの適用についてはそれぞれのプロジェクトで判断・変更してください
+※これはtumigiの長時間実行の試験をする目的で作成されました。実プロジェクトでの適用についてはそれぞれのプロジェクトで判断・変更してください
 
 改善方法についてのPRをお待ちしてます
 
@@ -52,7 +52,7 @@ claude_docker/ ディレクトリを参考に構築してください（plugin�
 プロジェクトの技術スタック（フレームワーク、ライブラリ）を初期化します：
 
 ```
-/tsumiki:init-tech-stack
+/tumigi:init-tech-stack
 ```
 
 init-tech-stack は以下を生成します：
@@ -64,7 +64,7 @@ init-tech-stack は以下を生成します：
 最初に、プロジェクトの要件概要をKairoに伝えます：
 
 ```
-/tsumiki:kairo-requirements 要件概要
+/tumigi:kairo-requirements 要件概要
 
 # プロンプト例：
 # "ECサイトの商品レビュー機能を実装したい。
@@ -85,7 +85,7 @@ Kairoは以下を生成します：
 要件を確認・修正した後、設計を依頼します：
 
 ```
-/tsumiki:kairo-design（または省略可能）
+/tumigi:kairo-design（または省略可能）
 
 # 要件を承認済みであることを伝えてください
 ```
@@ -104,12 +104,12 @@ Kairoは以下を生成します：
 設計を確認した後（承認は省略可）、タスク分割を実行します：
 
 ```
-/tsumiki:kairo-tasks
+/tumigi:kairo-tasks
 
 # 設計を承認したことを伝えてください（または省略可能）
 ```
 
-タスク内容の確認用に `/tsumiki:kairo-task-verify` を実行することをお勧めします。
+タスク内容の確認用に `/tumigi:kairo-task-verify` を実行することをお勧めします。
 
 Kairoは以下を生成します：
 - 依存関係を考慮したタスク一覧
@@ -124,13 +124,13 @@ Kairoは以下を生成します：
 
 ```
 # 全タスクを順番に実装
-/tsumiki:kairo-implement
+/tumigi:kairo-implement
 
 # 特定のタスクのみ実装
-/tsumiki:kairo-implement  タスクファイル名　TASK番号
+/tumigi:kairo-implement  タスクファイル名　TASK番号
 
 # タスク範囲を指定して実装 タスクディレクトリ名　開始TASK番号 終了TASK番号
-/tsumiki:kairo-loop
+/tumigi:kairo-loop
 （実行中にcompactが発動しても安定して「長時間処理」が可能です）
 ```
 
@@ -147,7 +147,7 @@ Kairoは各タスクに対して内部的にTDDコマンドを使用して以下
 Skills版のkairo-implementは、Claude Codeのタスクシステムと連携した高度な実装スキルです。
 
 ```
-/tsumiki:kairo-implement [要件名] [TASK-ID] [--hil]
+/tumigi:kairo-implement [要件名] [TASK-ID] [--hil]
 ```
 
 **特徴**:
@@ -166,22 +166,22 @@ TASK作成時に `TDD` と判定している場合で個別にTDDプロセスを
 
 ```
 # TDD要件定義
-/tsumiki:tdd-requirements タスクファイル名　TASK番号
+/tumigi:tdd-requirements タスクファイル名　TASK番号
 
 # テストケース作成
-/tsumiki:tdd-testcases タスクファイル名　TASK番号
+/tumigi:tdd-testcases タスクファイル名　TASK番号
 
 # テスト実装（Red）
-/tsumiki:tdd-red タスクファイル名　TASK番号
+/tumigi:tdd-red タスクファイル名　TASK番号
 
 # 最小実装（Green）
-/tsumiki:tdd-green タスクファイル名　TASK番号
+/tumigi:tdd-green タスクファイル名　TASK番号
 
 # リファクタリング
-/tsumiki:tdd-refactor タスクファイル名　TASK番号
+/tumigi:tdd-refactor タスクファイル名　TASK番号
 
 # TDD完了確認
-/tsumiki:tdd-verify-complete タスクファイル名　TASK番号
+/tumigi:tdd-verify-complete タスクファイル名　TASK番号
 ```
 
 ### DIRECTコマンド
@@ -190,10 +190,10 @@ TASK作成時に `DIRECT` と判定している場合は、以下のコマンド
 
 ```
 # DIRECT準備
-/tsumiki:direct-setup タスクファイル名　TASK番号
+/tumigi:direct-setup タスクファイル名　TASK番号
 
 # DIRECT検証
-/tsumiki:direct-verify タスクファイル名　TASK番号
+/tumigi:direct-verify タスクファイル名　TASK番号
 ```
 
 ### リバースエンジニアリングコマンド
@@ -202,16 +202,16 @@ TASK作成時に `DIRECT` と判定している場合は、以下のコマンド
 
 ```
 # 既存コードからタスク構造を分析
-/tsumiki:rev-tasks
+/tumigi:rev-tasks
 
 # 設計文書の逆生成（タスク分析後推奨）
-/tsumiki:rev-design
+/tumigi:rev-design
 
 # テスト仕様書の逆生成（設計文書後推奨）
-/tsumiki:rev-specs
+/tumigi:rev-specs
 
 # 要件定義書の逆生成（全分析完了後推奨）
-/tsumiki:rev-requirements
+/tumigi:rev-requirements
 ```
 
 #### リバースエンジニアリングの詳細
@@ -300,16 +300,16 @@ TASK作成時に `DIRECT` と判定している場合は、以下のコマンド
 
 ```bash
 # プロジェクト全体の逆解析
-/tsumiki:rev-tasks
+/tumigi:rev-tasks
 # → タスク構造を把握
 
-/tsumiki:rev-design
+/tumigi:rev-design
 # → アーキテクチャと設計を文書化
 
-/tsumiki:rev-specs
+/tumigi:rev-specs
 # → テスト状況を分析して不足テストを特定
 
-/tsumiki:rev-requirements
+/tumigi:rev-requirements
 # → 最終的に要件定義書を生成
 ```
 
@@ -323,17 +323,17 @@ TASK作成時に `DIRECT` と判定している場合は、以下のコマンド
 
 #### help
 
-tsumikiの利用可能なコマンド一覧の表示、個別コマンドの詳細ヘルプ、困りごとからの最適コマンド検索を行います。
+tumigiの利用可能なコマンド一覧の表示、個別コマンドの詳細ヘルプ、困りごとからの最適コマンド検索を行います。
 
 ```
 # コマンド一覧表示
-/tsumiki:help
+/tumigi:help
 
 # 特定コマンドの詳細
-/tsumiki:help kairo-requirements
+/tumigi:help kairo-requirements
 
 # 困りごとから検索
-/tsumiki:help テストが失敗して原因がわからない
+/tumigi:help テストが失敗して原因がわからない
 ```
 
 #### orchestrate
@@ -341,7 +341,7 @@ tsumikiの利用可能なコマンド一覧の表示、個別コマンドの詳�
 複雑な依頼を自動的に分析し、必要な作業をステップに分割して、適切なエージェントチームを編成して実行します。各ステップの成功条件を自動判定し、失敗時は最大5回まで自動再試行を行います。
 
 ```
-/tsumiki:orchestrate ログイン機能のテストを追加してバグを修正
+/tumigi:orchestrate ログイン機能のテストを追加してバグを修正
 ```
 
 **特徴**:
@@ -356,10 +356,10 @@ tsumikiの利用可能なコマンド一覧の表示、個別コマンドの詳�
 
 ```
 # 修正計画の作成
-/tsumiki:refine-plan テストの期待値を新しいAPI仕様に合わせて更新
+/tumigi:refine-plan テストの期待値を新しいAPI仕様に合わせて更新
 
 # 計画の実行
-/tsumiki:refine-execute .dcs/20260224_refine_xxx/plan.md
+/tumigi:refine-execute .dcs/20260224_refine_xxx/plan.md
 ```
 
 **refine-plan**は修正対象の特定、影響範囲の調査、実施内容の定義を行い、planファイルを出力します。
@@ -380,19 +380,19 @@ tsumikiの利用可能なコマンド一覧の表示、個別コマンドの詳�
 
 ```
 # テストエラーの自動デバッグ
-/tsumiki:auto-debug [テストファイルパス]
+/tumigi:auto-debug [テストファイルパス]
 
 # ビルドエラーの修正
-/tsumiki:build-fix
+/tumigi:build-fix
 
 # 環境問題の修正
-/tsumiki:env-fix
+/tumigi:env-fix
 
 # 不安定テストの修正
-/tsumiki:flaky-fix
+/tumigi:flaky-fix
 
 # タイムアウト問題の修正
-/tsumiki:timeout-fix
+/tumigi:timeout-fix
 ```
 
 ### セキュリティチェックスキル
@@ -415,23 +415,23 @@ IPA（情報処理推進機構）が公開する以下5つの公式資料に基�
 
 ```bash
 # カレントディレクトリ全体をスキャン
-/tsumiki:ipa-security-check
+/tumigi:ipa-security-check
 
 # 指定パス / glob のみ
-/tsumiki:ipa-security-check src/
-/tsumiki:ipa-security-check **/*.php
+/tumigi:ipa-security-check src/
+/tumigi:ipa-security-check **/*.php
 
 # 現ブランチと main の差分ファイルのみ
-/tsumiki:ipa-security-check --diff
+/tumigi:ipa-security-check --diff
 
 # カテゴリ限定
-/tsumiki:ipa-security-check --categories sqli,xss src/
+/tumigi:ipa-security-check --categories sqli,xss src/
 
 # 重大度フィルタ
-/tsumiki:ipa-security-check --severity high
+/tumigi:ipa-security-check --severity high
 
 # 出力ファイル指定
-/tsumiki:ipa-security-check --output report.md,report.sarif
+/tumigi:ipa-security-check --output report.md,report.sarif
 ```
 
 自然文（「IPA のセキュリティチェックをして」など）でも起動できます。
@@ -467,13 +467,13 @@ IPA（情報処理推進機構）が公開する以下5つの公式資料に基�
 
 #### ipa-security-guide
 
-`ipa-security-check` が出力したレポートを読み、各検出項目を優先順位付きの `tsumiki:dev-debug` 依頼リストに変換するスキルです。対象プロジェクトの言語・FW を問わず汎用的に使用できます。
+`ipa-security-check` が出力したレポートを読み、各検出項目を優先順位付きの `tumigi:dev-debug` 依頼リストに変換するスキルです。対象プロジェクトの言語・FW を問わず汎用的に使用できます。
 
 ```bash
-/tsumiki:ipa-security-guide
+/tumigi:ipa-security-guide
 ```
 
-`ipa-security-check` → `ipa-security-guide` → `tsumiki:dev-debug` の順で実行することで、脆弱性検出から修正までを一連の流れで進められます。
+`ipa-security-check` → `ipa-security-guide` → `tumigi:dev-debug` の順で実行することで、脆弱性検出から修正までを一連の流れで進められます。
 
 ## ディレクトリ構造
 
@@ -503,15 +503,15 @@ IPA（情報処理推進機構）が公開する以下5つの公式資料に基�
 
 ```mermaid
 flowchart TD
-    A[要件概要を伝える] --> B[tsumiki:kairo-requirements]
+    A[要件概要を伝える] --> B[tumigi:kairo-requirements]
     B --> C{要件を確認}
     C -->|修正必要| B
-    C -->|OK| D[tsumiki:kairo-design]
+    C -->|OK| D[tumigi:kairo-design]
     D --> E{設計を確認}
     E -->|修正必要| D
-    E -->|OK| F[tsumiki:kairo-tasks]
+    E -->|OK| F[tumigi:kairo-tasks]
     F --> G{タスクを確認}
-    G -->|OK| H[tsumiki:kairo-implement]
+    G -->|OK| H[tumigi:kairo-implement]
     H --> I{全タスク完了?}
     I -->|No| H
     I -->|Yes| J[プロジェクト完了]

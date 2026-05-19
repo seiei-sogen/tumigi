@@ -12,7 +12,7 @@ description: 既存のコードベースから要件定義書を逆生成しま�
 
 - 分析対象のコードベースが存在する
 - `docs/spec/{要件名}/` ディレクトリが存在する（なければ作成）
-- 可能であれば事前に `/tsumiki:rev-tasks` および `/tsumiki:rev-design` を実行済み
+- 可能であれば事前に `/tumigi:rev-tasks` および `/tumigi:rev-design` を実行済み
 
 ## 実行内容
 

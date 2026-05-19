@@ -52,7 +52,7 @@ dev-context（既存向け）┘
 
 **実行方法**
 ```
-/tsumiki:dev-init
+/tumigi:dev-init
 ```
 
 **特徴**:
@@ -75,7 +75,7 @@ dev-context（既存向け）┘
 
 **実行方法**
 ```
-/tsumiki:dev-context
+/tumigi:dev-context
 ```
 
 **特徴**:
@@ -91,16 +91,16 @@ dev-context（既存向け）┘
 ### 3. dev-navigate
 
 **用途**
-やりたいことを対話で把握し、最適なtsumikiスキルの開始ポイントを提案します。
+やりたいことを対話で把握し、最適なtumigiスキルの開始ポイントを提案します。
 
 **実行方法**
 ```
-/tsumiki:dev-navigate
+/tumigi:dev-navigate
 ```
 
 **特徴**:
 - 対話型のヒアリングでユーザーの目的を把握
-- tsumikiスキル全体から最適なスキルと実行順序を提案
+- tumigiスキル全体から最適なスキルと実行順序を提案
 - 提案後、ユーザーの承認があればそのスキルを起動
 
 ---
@@ -113,10 +113,10 @@ dev-context（既存向け）┘
 **実行方法**
 ```
 # Lightweight モード（素早い計画）
-/tsumiki:dev-plan auth "ユーザー認証機能を実装"
+/tumigi:dev-plan auth "ユーザー認証機能を実装"
 
 # PRDファイルを入力とする
-/tsumiki:dev-plan auth ./docs/prd.md
+/tumigi:dev-plan auth ./docs/prd.md
 
 # Full-spec モード（EARS要件定義付き）
 # 実行時にモード選択
@@ -142,10 +142,10 @@ TDDをガードレールとして、テストを先に書いてから実装す�
 **実行方法**
 ```
 # 通常モード（Plan+タスク指定）
-/tsumiki:dev-impl auth 001
+/tumigi:dev-impl auth 001
 
 # クイックモード（Plan不要の軽量修正）
-/tsumiki:dev-impl "バリデーションメッセージを日本語に変更"
+/tumigi:dev-impl "バリデーションメッセージを日本語に変更"
 ```
 
 **実行モード**:
@@ -169,7 +169,7 @@ Plan内の指定範囲タスクをdev-impl/dev-verify/dev-debugのワークフ�
 
 **実行方法**
 ```
-/tsumiki:dev-run auth 001 005
+/tumigi:dev-run auth 001 005
 ```
 
 **引数**:
@@ -193,7 +193,7 @@ Plan単位で全タスクの完了状態とテスト・ビルド・Lintの整合
 
 **実行方法**
 ```
-/tsumiki:dev-verify auth
+/tumigi:dev-verify auth
 ```
 
 **特徴**:
@@ -215,13 +215,13 @@ Plan単位で全タスクの完了状態とテスト・ビルド・Lintの整合
 **実行方法**
 ```
 # 自動検出モード
-/tsumiki:dev-debug
+/tumigi:dev-debug
 
 # 手動指定モード
-/tsumiki:dev-debug "TypeError: Cannot read properties of undefined"
+/tumigi:dev-debug "TypeError: Cannot read properties of undefined"
 
 # webtestエラー修正モード
-/tsumiki:dev-debug webtest
+/tumigi:dev-debug webtest
 ```
 
 **エラーカテゴリ**:
@@ -245,16 +245,16 @@ Plan単位で全タスクの完了状態とテスト・ビルド・Lintの整合
 **実行方法**
 ```
 # 自動判定（初回 or 差分更新）
-/tsumiki:dev-screen-spec
+/tumigi:dev-screen-spec
 
 # 強制的に初回生成
-/tsumiki:dev-screen-spec init
+/tumigi:dev-screen-spec init
 
 # 差分更新（特定画面のみ）
-/tsumiki:dev-screen-spec update login
+/tumigi:dev-screen-spec update login
 
 # Planの受け入れ条件から事前生成
-/tsumiki:dev-screen-spec from-plan auth
+/tumigi:dev-screen-spec from-plan auth
 ```
 
 **出力**: `docs/dev/screen-specs/`
@@ -269,13 +269,13 @@ dev-planの出力からPlaywright用のWebテスト計画ファイルを自動�
 **実行方法**
 ```
 # 新規生成
-/tsumiki:dev-webtest-plan auth
+/tumigi:dev-webtest-plan auth
 
 # 差分更新（全計画対象）
-/tsumiki:dev-webtest-plan update
+/tumigi:dev-webtest-plan update
 
 # 差分更新（特定計画のみ）
-/tsumiki:dev-webtest-plan update auth
+/tumigi:dev-webtest-plan update auth
 ```
 
 **前提条件**: `docs/dev/plans/<plan-name>/` が存在すること
@@ -292,19 +292,19 @@ Playwright CLIを使ってWebアプリケーションの動作確認・視覚テ
 **実行方法**
 ```
 # 計画テスト（Markdownテスト計画に沿って自動実行）
-/tsumiki:dev-webtest auth
+/tumigi:dev-webtest auth
 
 # 並列実行
-/tsumiki:dev-webtest auth --parallel 3
+/tumigi:dev-webtest auth --parallel 3
 
 # モンキーテスト
-/tsumiki:dev-webtest monkey http://localhost:3000
+/tumigi:dev-webtest monkey http://localhost:3000
 
 # クイックチェック（単一ページ）
-/tsumiki:dev-webtest check http://localhost:3000/login
+/tumigi:dev-webtest check http://localhost:3000/login
 
 # 再テスト（未解決エラーの再確認）
-/tsumiki:dev-webtest retest
+/tumigi:dev-webtest retest
 ```
 
 **実行モード**:
@@ -329,51 +329,51 @@ Playwright CLIを使ってWebアプリケーションの動作確認・視覚テ
 
 ```bash
 # 1. プロジェクト初期化
-/tsumiki:dev-init
+/tumigi:dev-init
 
 # 2. 実装計画
-/tsumiki:dev-plan auth "ユーザー認証機能"
+/tumigi:dev-plan auth "ユーザー認証機能"
 
 # 3. 自動実装
-/tsumiki:dev-run auth 001 005
+/tumigi:dev-run auth 001 005
 
 # 4. 検証
-/tsumiki:dev-verify auth
+/tumigi:dev-verify auth
 ```
 
 ### 既存プロジェクト
 
 ```bash
 # 1. コンテキスト分析
-/tsumiki:dev-context
+/tumigi:dev-context
 
 # 2. 何をすべきかわからない場合
-/tsumiki:dev-navigate
+/tumigi:dev-navigate
 
 # 3. 実装計画
-/tsumiki:dev-plan payment "決済機能の追加"
+/tumigi:dev-plan payment "決済機能の追加"
 
 # 4. タスクごとに実装
-/tsumiki:dev-impl payment 001
+/tumigi:dev-impl payment 001
 
 # 5. 検証
-/tsumiki:dev-verify payment
+/tumigi:dev-verify payment
 ```
 
 ### Webテストフロー
 
 ```bash
 # 1. 画面仕様の生成
-/tsumiki:dev-screen-spec
+/tumigi:dev-screen-spec
 
 # 2. テスト計画の生成
-/tsumiki:dev-webtest-plan auth
+/tumigi:dev-webtest-plan auth
 
 # 3. テスト実行
-/tsumiki:dev-webtest auth
+/tumigi:dev-webtest auth
 
 # 4. 問題があればデバッグ
-/tsumiki:dev-debug webtest
+/tumigi:dev-debug webtest
 ```
 
 ---

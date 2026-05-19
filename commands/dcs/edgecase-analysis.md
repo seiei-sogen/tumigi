@@ -31,7 +31,7 @@ argument-hint: [要件名]
 
 # step
 
-- $1 がない場合、「引数に要件名または分析対象を指定してください（例: /tsumiki:dcs:kairo-edgecase-analysis ユーザー認証システム）」と言って終了する
+- $1 がない場合、「引数に要件名または分析対象を指定してください（例: /tumigi:dcs:kairo-edgecase-analysis ユーザー認証システム）」と言って終了する
 - $1 の内容を context に保存する
 - context の内容をユーザに宣言する
 - step0 を実行する
@@ -65,7 +65,7 @@ argument-hint: [要件名]
           - 分析対象 = $1
         - step1-source を実行する（ソースコードベースの分析）
       - "要件定義書を作成してから分析" を選択した場合:
-        - 「要件定義書の作成が必要です。先に `/tsumiki:kairo-requirements {要件名}` を実行してください」とメッセージを表示
+        - 「要件定義書の作成が必要です。先に `/tumigi:kairo-requirements {要件名}` を実行してください」とメッセージを表示
         - 終了する
 
 ## step1: 要件情報の収集（要件定義書ベース）

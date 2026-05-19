@@ -20,7 +20,7 @@ claude_task_id={{claude_task_id}}
 以下の Task を実行する:
 
 ```
-@Task tool (subagent_type: general-purpose, model: {{noteTaskName}}) /tsumiki:tdd-tasknote {{要件名}} {{TASK-ID}}
+@Task tool (subagent_type: general-purpose, model: {{noteTaskName}}) /tumigi:tdd-tasknote {{要件名}} {{TASK-ID}}
 ```
 
 完了したら step-b を実行する
@@ -30,7 +30,7 @@ claude_task_id={{claude_task_id}}
 以下の Task を実行する:
 
 ```
-@Task tool (subagent_type: general-purpose, model: {{thinkTaskName}}) /tsumiki:tdd-requirements {{要件名}} {{TASK-ID}}
+@Task tool (subagent_type: general-purpose, model: {{thinkTaskName}}) /tumigi:tdd-requirements {{要件名}} {{TASK-ID}}
 ```
 
 完了したら step-c を実行する
@@ -40,7 +40,7 @@ claude_task_id={{claude_task_id}}
 以下の Task を実行する:
 
 ```
-@Task tool (subagent_type: general-purpose, model: {{thinkTaskName}}) /tsumiki:tdd-testcases {{要件名}} {{TASK-ID}}
+@Task tool (subagent_type: general-purpose, model: {{thinkTaskName}}) /tumigi:tdd-testcases {{要件名}} {{TASK-ID}}
 ```
 
 完了後:
@@ -81,7 +81,7 @@ AskUserQuestion ツールでユーザーの選択を取得する:
 以下の Task を実行する:
 
 ```
-@Task tool (subagent_type: general-purpose, model: {{tddTaskName}}) /tsumiki:tdd-red {{要件名}} {{TASK-ID}}
+@Task tool (subagent_type: general-purpose, model: {{tddTaskName}}) /tumigi:tdd-red {{要件名}} {{TASK-ID}}
 ```
 
 完了したら step-e を実行する
@@ -91,7 +91,7 @@ AskUserQuestion ツールでユーザーの選択を取得する:
 以下の Task を実行する:
 
 ```
-@Task tool (subagent_type: general-purpose, model: {{tddTaskName}}) /tsumiki:tdd-green {{要件名}} {{TASK-ID}}
+@Task tool (subagent_type: general-purpose, model: {{tddTaskName}}) /tumigi:tdd-green {{要件名}} {{TASK-ID}}
 ```
 
 完了したら step-f を実行する
@@ -101,7 +101,7 @@ AskUserQuestion ツールでユーザーの選択を取得する:
 以下の Task を実行する:
 
 ```
-@Task tool (subagent_type: general-purpose, model: {{tddTaskName}}) /tsumiki:tdd-refactor {{要件名}} {{TASK-ID}}
+@Task tool (subagent_type: general-purpose, model: {{tddTaskName}}) /tumigi:tdd-refactor {{要件名}} {{TASK-ID}}
 ```
 
 完了したら step-g を実行する
@@ -111,13 +111,13 @@ AskUserQuestion ツールでユーザーの選択を取得する:
 以下の Task を実行する:
 
 ```
-@Task tool (subagent_type: general-purpose, model: {{tddTaskName}}) /tsumiki:tdd-verify-complete {{要件名}} {{TASK-ID}}
+@Task tool (subagent_type: general-purpose, model: {{tddTaskName}}) /tumigi:tdd-verify-complete {{要件名}} {{TASK-ID}}
 ```
 
 判定結果に応じた処理:
 - **テストケース不足**: 不足内容を明示した上で step-d（tdd-red）に戻り、テストケースを追加
 - **実装不足（テストケースは十分）**: 失敗テストを明示した上で step-e（tdd-green）に戻り、実装を追加
-- **スコープ外のみ失敗**: step-h へ進む + ユーザーに `/tsumiki:auto-debug` 推奨を通知
+- **スコープ外のみ失敗**: step-h へ進む + ユーザーに `/tumigi:auto-debug` 推奨を通知
 - **OK**: step-h へ進む
 
 ## step-h: タスク完了処理

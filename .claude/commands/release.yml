@@ -16,5 +16,5 @@ new_versionの指定がない場合、patchバージョンを現在のバージ�
   - `What's Changed`、`Contributors`、`Full Changelog` のセクションが必要です。
   - `./tmp/release-notes.md` をリリースノートとして使用します。
 9. 予防措置として、リリース内容に非公開にすべき情報が含まれていないことを確認します。
-10. `gh release create {new_version_with_v_prefix} --title {new_version_with_v_prefix} --notes-file ./tmp/release-notes.md ...` コマンドを使用して、`github.com/classmethod/tsumiki` リポジトリでタイトルとタグの両方を new_version_with_v_prefix に設定し、ステップ4の内容を説明として使用してリリースを作成します。
+10. `gh release create {new_version_with_v_prefix} --title {new_version_with_v_prefix} --notes-file ./tmp/release-notes.md ...` コマンドを使用して、`github.com/seiei-sogen/tumigi` リポジトリでタイトルとタグの両方を new_version_with_v_prefix に設定し、ステップ4の内容を説明として使用してリリースを作成します。
 11. main ブランチに戻ります。

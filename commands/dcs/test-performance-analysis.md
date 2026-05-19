@@ -14,7 +14,7 @@ description: テスト実行速度を分析し、遅いテストのリファク�
 
 - `docs/rule` ディレクトリが存在する場合は読み込み
 - `docs/rule/test-optimization` ディレクトリが存在する場合は読み込み
-- `.claude/commands/tsumiki/test-optimization-patterns.md` を読み込み
+- `.claude/commands/tumigi/test-optimization-patterns.md` を読み込み
 - 各ディレクトリ内のすべてのファイルを読み込み、追加ルールとして適用
 
 ### step2: テスト実行時間の計測

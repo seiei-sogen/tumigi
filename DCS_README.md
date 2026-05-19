@@ -7,23 +7,23 @@ DCSは、ソフトウェア開発の各フェーズにおける様々な分析�
 ### 開発フェーズ別コマンド一覧
 
 #### **企画・要件定義フェーズ**
-- `/tsumiki:dcs:feature-rubber-duck` - アイデア整理とPRD作成
+- `/tumigi:dcs:feature-rubber-duck` - アイデア整理とPRD作成
 
 #### **設計・分析フェーズ**
-- `/tsumiki:dcs:sequence-diagram-analysis` - シーケンス図作成
-- `/tsumiki:dcs:state-transition-analysis` - 状態遷移分析
-- `/tsumiki:dcs:impact-analysis` - 影響範囲分析
-- `/tsumiki:dcs:edgecase-analysis` - エッジケース・異常系分析
+- `/tumigi:dcs:sequence-diagram-analysis` - シーケンス図作成
+- `/tumigi:dcs:state-transition-analysis` - 状態遷移分析
+- `/tumigi:dcs:impact-analysis` - 影響範囲分析
+- `/tumigi:dcs:edgecase-analysis` - エッジケース・異常系分析
 
 #### **実装計画フェーズ**
-- `/tsumiki:dcs:incremental-dev` - 増分開発計画
+- `/tumigi:dcs:incremental-dev` - 増分開発計画
 
 #### **デバッグ・保守フェーズ**
-- `/tsumiki:dcs:bug-analysis` - バグ原因分析
-- `/tsumiki:dcs:performance-analysis` - 性能問題調査
+- `/tumigi:dcs:bug-analysis` - バグ原因分析
+- `/tumigi:dcs:performance-analysis` - 性能問題調査
 
 #### **コードベース理解**
-- `/tsumiki:dcs:code-question` - ソースコードに関する質問回答
+- `/tumigi:dcs:code-question` - ソースコードに関する質問回答
 
 ---
 
@@ -383,32 +383,32 @@ DCSは、ソフトウェア開発の各フェーズにおける様々な分析�
 
 ### バグ分析の実行
 ```
-/tsumiki:dcs:bug-analysis カート内の商品合計金額が正しく計算されない
+/tumigi:dcs:bug-analysis カート内の商品合計金額が正しく計算されない
 ```
 
 ### 影響範囲分析の実行
 ```
-/tsumiki:dcs:impact-analysis src/models/User.ts
+/tumigi:dcs:impact-analysis src/models/User.ts
 ```
 
 ### シーケンス図作成の実行
 ```
-/tsumiki:dcs:sequence-diagram-analysis 注文確定処理
+/tumigi:dcs:sequence-diagram-analysis 注文確定処理
 ```
 
 ### 増分開発計画の実行
 ```
-/tsumiki:dcs:incremental-dev ユーザー認証機能の追加
+/tumigi:dcs:incremental-dev ユーザー認証機能の追加
 ```
 
 ### ソースコードへの質問
 ```
-/tsumiki:dcs:code-question 認証フローはどのように実装されていますか
+/tumigi:dcs:code-question 認証フローはどのように実装されていますか
 ```
 
 ### エッジケース分析の実行
 ```
-/tsumiki:dcs:edgecase-analysis ユーザー認証システム
+/tumigi:dcs:edgecase-analysis ユーザー認証システム
 ```
 
 ---

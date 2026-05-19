@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 概要
 
-TsumikiはAI駆動開発フレームワークです。Claude Code Plugin経由でインストールされ、要件定義から実装までのAI支援開発プロセスを提供します。
+TumigiはAI駆動開発フレームワークです。Claude Code Plugin経由でインストールされ、要件定義から実装までのAI支援開発プロセスを提供します。
 
 このリポジトリには以下が含まれています：
 - **`commands/`**: Claude Codeスラッシュコマンド用のテンプレートファイル（`.md`と`.sh`）
@@ -26,7 +26,7 @@ pnpm prepare                # simple-git-hooksのセットアップ
 
 ## プロジェクト構造
 
-- **`commands/`**: TsumikiのAI開発フレームワーク用Claude Codeコマンドテンプレート（`.md`と`.sh`ファイル）
+- **`commands/`**: TumigiのAI開発フレームワーク用Claude Codeコマンドテンプレート（`.md`と`.sh`ファイル）
 - **`agents/`**: Claude Codeエージェント定義（`.md`ファイル）
 - **`.claude-plugin/`**: Claude Code Plugin設定（marketplace.json, plugin.json）
 - **`book/`**: 開発ガイドとドキュメント
@@ -39,17 +39,17 @@ pnpm prepare                # simple-git-hooksのセットアップ
 
 ## インストール方法
 
-ユーザーは以下のコマンドでTsumikiをインストールします：
+ユーザーは以下のコマンドでTumigiをインストールします：
 
 ```bash
-/plugin marketplace add https://github.com/classmethod/tsumiki.git
-/plugin install tsumiki@tsumiki 
+/plugin marketplace add https://github.com/seiei-sogen/tumigi.git
+/plugin install tumigi@tumigi 
 ```
 
 Claude Code Pluginが自動的に：
 1. リポジトリから`commands/`と`agents/`のファイルを読み込み
 2. `.claude-plugin/plugin.json`の設定に従ってコマンドとエージェントを登録
-3. `/tsumiki:` プレフィックス付きでコマンドを使用可能にする
+3. `/tumigi:` プレフィックス付きでコマンドを使用可能にする
 
 ## 品質管理
 

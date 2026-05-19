@@ -29,7 +29,7 @@ Refactorフェーズファイル=./docs/implements/{要件名}/{{task_id}}/{feat
 
 1. **タスクノートの読み込み（唯一のコンテキストソース）**
    - `./docs/implements/{要件名}/{{task_id}}/note.md` を読み込み
-   - 存在しない場合: @task で `/tsumiki:tdd-tasknote {要件名} {{task_id}}` を実行して生成
+   - 存在しない場合: @task で `/tumigi:tdd-tasknote {要件名} {{task_id}}` を実行して生成
    - note.mdには技術スタック、開発ルール、関連実装、設計文書、テスト関連情報、注意事項が集約済み
 
 2. **直前フェーズの出力を読み込み**
@@ -66,8 +66,8 @@ Refactorフェーズファイル=./docs/implements/{要件名}/{{task_id}}/{feat
     - test/integration.test.js: 8秒
 
     改善方法:
-    1. `/tsumiki:dcs:test-performance-analysis` で詳細分析
-    2. `/tsumiki:test-optimization-patterns` でパターンを確認
+    1. `/tumigi:dcs:test-performance-analysis` で詳細分析
+    2. `/tumigi:test-optimization-patterns` でパターンを確認
     3. 次のTDDサイクルで段階的に改善
     ```
 - テスト状態（スコープ内/スコープ外それぞれ）を記録し、step4 に進む
@@ -180,7 +180,7 @@ step7 を実行する
 - スコープ外テスト: 失敗あり（auto-debug対応推奨）
 - 要件網羅率: 100%
 - 今回のタスクの要件充実度は完全達成
-- スコープ外の問題は別途 /tsumiki:auto-debug で対応
+- スコープ外の問題は別途 /tumigi:auto-debug で対応
 
 ⚠️ 要改善（タスク未完了）:
 - 今回のタスクのテスト: 失敗あり
@@ -358,7 +358,7 @@ step7 を実行する
 🚀 要件定義に対する完全な充実度を達成しました。
 自動で次のTDDサイクルに進みます。
 
-次のお勧めステップ: `/tsumiki:tdd-cycle` で次のTDDサイクルを開始します。
+次のお勧めステップ: `/tumigi:tdd-cycle` で次のTDDサイクルを開始します。
 </complete_output>
 
 <complete_with_scope_warning_output>
@@ -380,7 +380,7 @@ step7 を実行する
 - [失敗テストファイル2]: [失敗内容の概要]
 
 📝 スコープ外の失敗はmemoファイルに記録済みです。
-🔧 **推奨対応**: `/tsumiki:auto-debug` を実行してスコープ外の失敗テストを修正してください。
+🔧 **推奨対応**: `/tumigi:auto-debug` を実行してスコープ外の失敗テストを修正してください。
 
 🚀 今回のタスクの要件は完全に達成されています。
 自動で次のTDDサイクルに進みます。

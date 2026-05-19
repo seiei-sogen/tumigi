@@ -1,6 +1,6 @@
 # コントリビューションガイド
 
-Tsumikiプロジェクトへのコントリビューションをありがとうございます！このガイドでは、プロジェクトに貢献する方法について説明します。
+Tumigiプロジェクトへのコントリビューションをありがとうございます！このガイドでは、プロジェクトに貢献する方法について説明します。
 
 ## 開発環境のセットアップ
 
@@ -14,8 +14,8 @@ Tsumikiプロジェクトへのコントリビューションをありがとう�
 1. リポジトリをフォークしてクローンします：
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/tsumiki.git
-cd tsumiki
+git clone https://github.com/YOUR_USERNAME/tumigi.git
+cd tumigi
 ```
 
 2. 依存関係をインストールします：
@@ -102,7 +102,7 @@ pnpm secretlint
 ## プロジェクト構造
 
 ```
-tsumiki/
+tumigi/
 ├── .claude-plugin/         # Claude Code Plugin設定
 ├── commands/               # コマンドテンプレート（.md, .sh）
 ├── agents/                 # エージェント定義（.md）
@@ -135,7 +135,7 @@ git push origin feature/your-feature-name
 
 ## Issue報告
 
-バグ報告や機能要望は[Issues](https://github.com/classmethod/tsumiki/issues)で受け付けています。
+バグ報告や機能要望は[Issues](https://github.com/seiei-sogen/tumigi/issues)で受け付けています。
 
 ### バグ報告
 
@@ -166,7 +166,7 @@ git push origin feature/your-feature-name
 
 ## 質問・サポート
 
-- [Issues](https://github.com/classmethod/tsumiki/issues) - バグ報告、機能要望
-- [Discussions](https://github.com/classmethod/tsumiki/discussions) - 質問、議論
+- [Issues](https://github.com/seiei-sogen/tumigi/issues) - バグ報告、機能要望
+- [Discussions](https://github.com/seiei-sogen/tumigi/discussions) - 質問、議論
 
 コントリビューションをお待ちしています！

@@ -1,25 +1,25 @@
-# Tsumiki - AI駆動開発支援フレームワーク
+# Tumigi - AI駆動開発支援フレームワーク
 
-TsumikiはAI駆動開発のためのフレームワークです。要件定義から実装まで、AIを活用した効率的な開発プロセスを提供します。
+TumigiはAI駆動開発のためのフレームワークです。要件定義から実装まで、AIを活用した効率的な開発プロセスを提供します。
 
-基本的にClaude Codeをサポートしますが、それ以外のツールでも使用できます。[Claude Code以外のツールでtsumikiを使用する](#claude-code以外のツールでtsumikiを使用する) を参照してください。
+基本的にClaude Codeをサポートしますが、それ以外のツールでも使用できます。[Claude Code以外のツールでtumigiを使用する](#claude-code以外のツールでtumigiを使用する) を参照してください。
 
 ## インストール
 
-Tsumikiを使用するには、次のClaude Code Pluginコマンドでインストールしてください：
+Tumigiを使用するには、次のClaude Code Pluginコマンドでインストールしてください：
 
 ```bash
-/plugin marketplace add https://github.com/classmethod/tsumiki.git
-/plugin install tsumiki@tsumiki
+/plugin marketplace add https://github.com/seiei-sogen/tumigi.git
+/plugin install tumigi@tumigi
 ```
 
-このコマンドを実行すると、TsumikiのClaude Codeスラッシュコマンドとエージェントが自動的にインストールされます。
+このコマンドを実行すると、TumigiのClaude Codeスラッシュコマンドとエージェントが自動的にインストールされます。
 
-**注意**: コマンドは `/tsumiki:` プレフィックス付きで実行します（例：`/tsumiki:kairo-requirements`）。
+**注意**: コマンドは `/tumigi:` プレフィックス付きで実行します（例：`/tumigi:kairo-requirements`）。
 
 ## 概要
 
-Tsumikiは以下のカテゴリで構成されています：
+Tumigiは以下のカテゴリで構成されています：
 
 | カテゴリ | 説明 |
 |---------|------|
@@ -119,73 +119,73 @@ DCSはコードベースの分析・調査を支援するコマンドスイー�
 
 ## クイックスタート
 
-**注意**: Claude Code Pluginでインストールした場合は、各コマンドの先頭に `tsumiki:` を付けてください（例：`/tsumiki:kairo-requirements`）。
+**注意**: Claude Code Pluginでインストールした場合は、各コマンドの先頭に `tumigi:` を付けてください（例：`/tumigi:kairo-requirements`）。
 
 ### Kairoによる包括的な開発フロー
 
 ```bash
 # 1. 技術スタック初期化
-/tsumiki:init-tech-stack
+/tumigi:init-tech-stack
 
 # 2. 要件定義
-/tsumiki:kairo-requirements
+/tumigi:kairo-requirements
 
 # 3. 設計
-/tsumiki:kairo-design
+/tumigi:kairo-design
 
 # 4. タスク分割
-/tsumiki:kairo-tasks
+/tumigi:kairo-tasks
 
 # 5. 実装（自動連続実装）
-/tsumiki:kairo-loop
+/tumigi:kairo-loop
 ```
 
 ### Dev Skillsによる開発フロー
 
 ```bash
 # 1. プロジェクトコンテキスト生成
-/tsumiki:dev-context
+/tumigi:dev-context
 
 # 2. 実装計画作成
-/tsumiki:dev-plan auth "ユーザー認証機能を実装"
+/tumigi:dev-plan auth "ユーザー認証機能を実装"
 
 # 3. 自動連続実装
-/tsumiki:dev-run auth 001 005
+/tumigi:dev-run auth 001 005
 
 # 4. 検証
-/tsumiki:dev-verify auth
+/tumigi:dev-verify auth
 ```
 
 ### 個別TDDプロセス
 
 ```bash
-/tsumiki:tdd-requirements
-/tsumiki:tdd-testcases
-/tsumiki:tdd-red
-/tsumiki:tdd-green
-/tsumiki:tdd-refactor
-/tsumiki:tdd-verify-complete
+/tumigi:tdd-requirements
+/tumigi:tdd-testcases
+/tumigi:tdd-red
+/tumigi:tdd-green
+/tumigi:tdd-refactor
+/tumigi:tdd-verify-complete
 ```
 
 ### リバースエンジニアリング
 
 ```bash
 # 1. 既存コードからタスク構造を分析
-/tsumiki:rev-tasks
+/tumigi:rev-tasks
 
 # 2. 設計文書の逆生成（タスク分析後推奨）
-/tsumiki:rev-design
+/tumigi:rev-design
 
 # 3. テスト仕様書の逆生成（設計文書後推奨）
-/tsumiki:rev-specs
+/tumigi:rev-specs
 
 # 4. 要件定義書の逆生成（全分析完了後推奨）
-/tsumiki:rev-requirements
+/tumigi:rev-requirements
 ```
 
-## Claude Code以外のツールでtsumikiを使用する
+## Claude Code以外のツールでtumigiを使用する
 
-[rulesync](https://github.com/dyoshikawa/rulesync)を組み合わせて使用することで、Claude Code以外のツールでもtsumikiのコマンドを使用できます。
+[rulesync](https://github.com/dyoshikawa/rulesync)を組み合わせて使用することで、Claude Code以外のツールでもtumigiのコマンドを使用できます。
 
 プロジェクトルートで以下のコマンドを実行します。
 

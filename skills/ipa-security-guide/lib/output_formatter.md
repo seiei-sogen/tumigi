@@ -8,7 +8,7 @@
 #### 依頼 N — [件名]
 
 ```
-/tsumiki:dev-debug
+/tumigi:dev-debug
 
 [問題の説明: 何が問題で、なぜ問題なのか1〜2文]
 

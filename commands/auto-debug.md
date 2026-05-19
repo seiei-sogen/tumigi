@@ -37,7 +37,7 @@ argument-hint: "[テストファイルパス（省略可）]"
    - **--verboseは使用しない**（成功テストの詳細出力はトークンの無駄）
    - 失敗しているテストファイル名のみをリスト化
    - テストファイルごとにグループ化
-   - **タイムアウト発生時**: /tsumiki:timeout-fix コマンドを subagent（general-purpose）で実行
+   - **タイムアウト発生時**: /tumigi:timeout-fix コマンドを subagent（general-purpose）で実行
      - timeout-fix 成功 → テスト再実行
      - timeout-fix 失敗（テスト分離成功） → 分離されたテストをレポートに記載し、残りのテストで続行
      - timeout-fix 失敗（分離も不能） → タイムアウトとしてレポート（step5）に報告し終了
@@ -48,7 +48,7 @@ argument-hint: "[テストファイルパス（省略可）]"
      - TypeScript型エラー（TS2xxx系エラー）
      - 依存パッケージ未解決（Module not found, Cannot resolve 等）
    - **ビルドエラーの場合**:
-     - /tsumiki:build-fix コマンドを subagent（general-purpose）で実行（test_command と error_output を渡す）
+     - /tumigi:build-fix コマンドを subagent（general-purpose）で実行（test_command と error_output を渡す）
      - build-fix 成功 → テスト再実行して step1-3 の結果確認に戻る
      - build-fix 失敗 → ビルドエラーとして最終レポート（step5）に報告し終了
    - **テストエラーの場合**: 通常通りstep2へ進む
@@ -75,7 +75,7 @@ argument-hint: "[テストファイルパス（省略可）]"
    timeout 120 {{test_command}} -- <失敗したテストファイル> --verbose
    ```
    - 失敗テストの詳細なエラーメッセージ・スタックトレースを取得
-   - **タイムアウト発生時**: /tsumiki:timeout-fix コマンドを subagent で実行（test_file を指定）
+   - **タイムアウト発生時**: /tumigi:timeout-fix コマンドを subagent で実行（test_file を指定）
      - 成功 → テスト再実行
      - 失敗 → レポートに記載して次のテストファイルへ
 
@@ -85,7 +85,7 @@ argument-hint: "[テストファイルパス（省略可）]"
    {{test_command}} -- <失敗したテストファイル> --verbose
    ```
    - 2回目に成功した場合: **flaky test と判定**
-     - /tsumiki:flaky-fix コマンドを subagent（general-purpose）で実行（test_file と error_output を渡す）
+     - /tumigi:flaky-fix コマンドを subagent（general-purpose）で実行（test_file と error_output を渡す）
      - flaky-fix 成功（3回連続成功） → 安定化済みとして通常フローに復帰（修正済みテストとして次のテストファイルへ）
      - flaky-fix 失敗 → 従来通り flaky test として記録し、修正対象から除外。次のテストファイルへ
    - 2回目も失敗した場合: 安定した失敗と判断し、次の分析ステップへ
@@ -108,7 +108,7 @@ argument-hint: "[テストファイルパス（省略可）]"
 
 6. **環境・依存関係問題の委譲**
    - エラー分類で「⚙️ 設定・環境問題」または「📦 依存関係問題」と判定された場合:
-     - /tsumiki:env-fix コマンドを subagent（general-purpose）で実行（test_command, test_file, error_output, error_classification を渡す）
+     - /tumigi:env-fix コマンドを subagent（general-purpose）で実行（test_command, test_file, error_output, error_classification を渡す）
      - env-fix 成功 → テストを再実行し、成功すれば次のテストファイルへ
      - env-fix 失敗 → 保留リストに追加（保留理由: env-fix の結果レポートを含める）。次のテストファイルへ
 
@@ -270,8 +270,8 @@ argument-hint: "[テストファイルパス（省略可）]"
 - test/integration.test.js: 8秒
 
 テスト実行速度の改善を推奨します:
-1. `/tsumiki:dcs:test-performance-analysis` で詳細分析
-2. `/tsumiki:test-optimization-patterns` でリファクタリングパターンを確認
+1. `/tumigi:dcs:test-performance-analysis` で詳細分析
+2. `/tumigi:test-optimization-patterns` でリファクタリングパターンを確認
 ```
 
 # rule
@@ -282,10 +282,10 @@ MUST: 3回試行後も解消できないテストは保留リストに追加
 MUST: step3→step2の外側ループは最大3ラウンドまで（カスケード障害防止）
 MUST: テストコマンドは自動検出結果（{{test_command}}）を使用する（npm test固定にしない）
 MUST: テスト実行時はtimeoutを明示指定する（全体: 300秒、個別: 120秒）
-MUST: ビルドエラー検出時はまず /tsumiki:build-fix に委譲し、失敗時のみレポート
-MUST: flaky test検出時はまず /tsumiki:flaky-fix に委譲し、失敗時のみ除外・レポート
-MUST: 環境・依存関係問題はまず /tsumiki:env-fix に委譲し、失敗時のみ保留・レポート
-MUST: タイムアウト発生時はまず /tsumiki:timeout-fix に委譲し、失敗時のみ分離またはレポート
+MUST: ビルドエラー検出時はまず /tumigi:build-fix に委譲し、失敗時のみレポート
+MUST: flaky test検出時はまず /tumigi:flaky-fix に委譲し、失敗時のみ除外・レポート
+MUST: 環境・依存関係問題はまず /tumigi:env-fix に委譲し、失敗時のみ保留・レポート
+MUST: タイムアウト発生時はまず /tumigi:timeout-fix に委譲し、失敗時のみ分離またはレポート
 MUST: テストバグの疑いがある場合は修正せずユーザに報告
 MUST: リトライ時は前回の修正履歴を分析に含める（同じ修正の繰り返し防止）
 
